@@ -13,3 +13,6 @@
 /bin
 /bin-tmp
 /.vs
+*log
+.dll
+.lib

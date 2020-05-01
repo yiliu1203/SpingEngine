@@ -3,20 +3,22 @@
 #include "SPing.h"
 
 
-
-
-//class Sandbox : public SPing::Application
-//{
-//
-//};
-
-void main()
+class Sandbox : public SPing::Application
 {
-	/*auto s = Sandbox();
-	s.Run();*/
+public:
+	Sandbox()
+	{
 
-	SPing::Print();
+	}
+	~Sandbox()
+	{
 
-	return;
+	}
 
+};
+
+
+SPing::Application* SPing::CreateApplication()
+{
+	return new Sandbox();
 }

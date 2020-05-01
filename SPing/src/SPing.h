@@ -3,8 +3,12 @@
 
 
 #include "SPing\Application.h"
+#include "SPing\Log.h"
 
 
+
+
+#include "SPing/Entry.h"
 
 
 #endif

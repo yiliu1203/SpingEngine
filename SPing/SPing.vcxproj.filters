@@ -18,10 +18,15 @@
     <ClInclude Include="src\SPing.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\SPing\Entry.h">
+      <Filter>src\SPing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SPing\Log.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\SPing\Application.cpp">
       <Filter>src\SPing</Filter>
     </ClCompile>
+    <ClCompile Include="src\SPing\Log.cpp" />
   </ItemGroup>
 </Project>
