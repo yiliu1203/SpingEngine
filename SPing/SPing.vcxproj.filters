@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{c9d5969e-e9f1-4a35-985e-b6311c5f2517}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\SPing">
+      <UniqueIdentifier>{3ee97c10-e7aa-4242-879c-d87af60e3274}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\SPing\Core.h">
+      <Filter>src\SPing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SPing\Application.h">
+      <Filter>src\SPing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SPing.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\SPing\Application.cpp">
+      <Filter>src\SPing</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

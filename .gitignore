@@ -1,0 +1,15 @@
+*.cover
+*.o
+*.orig
+*.pyc
+*.pyd
+*.pyo
+*.rej
+*.swp
+*.gc??
+*.profclang?
+*.profraw
+*.dyn
+/bin
+/bin-tmp
+/.vs
