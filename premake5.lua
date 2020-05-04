@@ -55,7 +55,8 @@ project "SPing"
 		defines
 		{
 			"SP_PLATFORM_WIN",
-			"SP_BUILD_DLL"
+			"SP_BUILD_DLL",
+			"SP_ENABLE_ASSERT",
 		}
 
 		postbuildcommands

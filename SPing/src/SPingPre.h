@@ -12,6 +12,8 @@
 #include <functional>
 #include <type_traits>
 
+#include "SPing/Log.h"
+
 
 #ifdef SP_PLATFORM_WIN
 	#include <Windows.h>

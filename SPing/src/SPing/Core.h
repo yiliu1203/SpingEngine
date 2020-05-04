@@ -17,11 +17,29 @@
 
 	
 
-	// ----------------------------------------
+	// ---------------BIT--------------------
 	
-#define BIT(x) 1 << x
+	#define BIT(x) 1 << x
 
 	//----------------------------------------
+
+	
+	// ---------------------SP_ASSERT----------------
+	
+	#ifdef SP_ENABLE_ASSERT
+	
+		#define SP_ASSERT(x, ...) {if(!x){SP_ERR("Assert Failed:{0}", __VA_ARGS__); __debugbreak();}}
+		#define SP_CORE_ASSERT(x, ...) {if(!x){SP_CORE_ERR("Assert Failed:{0}", __VA_ARGS__); __debugbreak();}}
+
+	#else
+
+		#define SP_ASSERT(x, ...)
+		#define SP_CORE_ASSERT(x, ...)
+
+	#endif // SP_ENABLE_ASSERT
+	
+	//---------------------------------------------------
+
 
 
 #endif

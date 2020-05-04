@@ -79,9 +79,9 @@ namespace SPing {
 	};
 
 
-	std::ostream& operator<<(std::ostream& os, const Event& event) {
-		return os << event.ToString();
-	}
+	//std::ostream& operator<<(std::ostream& os, const Event& event) {
+	//	return os << event.ToString();
+	//}
 
 
 	template <typename T>

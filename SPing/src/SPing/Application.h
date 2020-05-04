@@ -3,6 +3,7 @@
 #define SP_APPLICATION_H
 
 #include "Core.h"
+#include "Window.h"
 
 //#define SP_API __declspec(dllexport)  // ∆Ê›‚¡À°£°£°£
 
@@ -14,6 +15,10 @@ namespace SPing {
 		Application();
 		virtual  ~Application();
 		void Run();
+
+	private:
+		std::unique_ptr<Window> _Window;
+		bool _IsRunning;
 
 	};
 	
