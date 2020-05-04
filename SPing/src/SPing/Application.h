@@ -3,7 +3,6 @@
 #define SP_APPLICATION_H
 
 #include "Core.h"
-#include <stdio.h>
 
 //#define SP_API __declspec(dllexport)  // ∆Ê›‚¡À°£°£°£
 

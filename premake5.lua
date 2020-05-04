@@ -22,8 +22,12 @@ project "SPing"
 
 	includedirs
 	{
-		spdlog .. "include/"
+		spdlog .. "include/",
+		"%{prj.name}/src"
 	}
+
+	pchheader "SPingPre.h"
+	pchsource "SPing/src/SPingPre.cpp" 
 
 	filter "system:windows"
 		cppdialect "C++17"

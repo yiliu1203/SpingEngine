@@ -35,9 +35,9 @@ namespace SPing
 #define SP_CORE_INFO(...)			::SPing::Log::GetCoreLogger()->info(__VA_ARGS__)
 
 
-#define SP_ERROR(...)				::SPing::Log::GetClientLogger()->error(__VA_ARGS__)
-#define SP_WARN(...)				::SPing::Log::GetClientLogger()->warn(__VA_ARGS__)
-#define SP_TRACE(...)				::SPing::Log::GetClientLogger()->trace(__VA_ARGS__)
-#define SP_INFO(...)				::SPing::Log::GetClientLogger()->info(__VA_ARGS__)
+#define SP_CLIENT_ERROR(...)				::SPing::Log::GetClientLogger()->error(__VA_ARGS__)
+#define SP_CLIENT_WARN(...)				::SPing::Log::GetClientLogger()->warn(__VA_ARGS__)
+#define SP_CLIENT_TRACE(...)				::SPing::Log::GetClientLogger()->trace(__VA_ARGS__)
+#define SP_CLIENT_INFO(...)				::SPing::Log::GetClientLogger()->info(__VA_ARGS__)
 
 #endif

@@ -9,7 +9,7 @@ int main(int argc, char** argv)
 {
 	auto app = SPing::CreateApplication();
 	SPing::Log::Init();
-	SP_INFO("App Initial");
+	//SP_CLIENT_INFO("App Initial");
 
 	app->Run();
 	return 1; 
@@ -18,7 +18,7 @@ int main(int argc, char** argv)
 
 
 #endif // SP_PLATFROM_WIN
-
+ 
 
 
 #endif

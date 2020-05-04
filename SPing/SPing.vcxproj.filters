@@ -4,6 +4,9 @@
     <Filter Include="SPing">
       <UniqueIdentifier>{869D0A0E-F2B1-32BF-BB33-D61E27072FF0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SPing\Events">
+      <UniqueIdentifier>{AA164374-9679-D218-3FFF-0ACF2B419E9B}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\SPing.h" />
@@ -16,9 +19,22 @@
     <ClInclude Include="src\SPing\Entry.h">
       <Filter>SPing</Filter>
     </ClInclude>
+    <ClInclude Include="src\SPing\Events\ApplicationEvent.h">
+      <Filter>SPing\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SPing\Events\Event.h">
+      <Filter>SPing\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SPing\Events\KeyEvent.h">
+      <Filter>SPing\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SPing\Events\MouseEvent.h">
+      <Filter>SPing\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\SPing\Log.h">
       <Filter>SPing</Filter>
     </ClInclude>
+    <ClInclude Include="src\SPingPre.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\SPing\Application.cpp">
@@ -27,5 +43,6 @@
     <ClCompile Include="src\SPing\Log.cpp">
       <Filter>SPing</Filter>
     </ClCompile>
+    <ClCompile Include="src\SPingPre.cpp" />
   </ItemGroup>
 </Project>
