@@ -11,21 +11,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{869D0A0E-F2B1-32BF-BB33-D61E27072FF0}</ProjectGuid>
+    <ProjectGuid>{154B857C-0182-860D-AA6E-6C109684020F}</ProjectGuid>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>SPing</RootNamespace>
+    <RootNamespace>GLFW</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
@@ -41,90 +41,70 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\bin\Debug-windows-x86_64\SPing\</OutDir>
-    <IntDir>..\bin\Debug-windows-x86_64\SPing\</IntDir>
-    <TargetName>SPing</TargetName>
-    <TargetExt>.dll</TargetExt>
+    <OutDir>..\..\bin\Debug-windows-x86_64\GLFW\</OutDir>
+    <IntDir>..\..\bin-tmp\Debug-windows-x86_64\GLFW\</IntDir>
+    <TargetName>GLFW</TargetName>
+    <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LinkIncremental>false</LinkIncremental>
-    <OutDir>..\bin\Release-windows-x86_64\SPing\</OutDir>
-    <IntDir>..\bin\Release-windows-x86_64\SPing\</IntDir>
-    <TargetName>SPing</TargetName>
-    <TargetExt>.dll</TargetExt>
+    <OutDir>..\..\bin\Release-windows-x86_64\GLFW\</OutDir>
+    <IntDir>..\..\bin-tmp\Release-windows-x86_64\GLFW\</IntDir>
+    <TargetName>GLFW</TargetName>
+    <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>SPingPre.h</PrecompiledHeaderFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>SP_PLATFORM_WIN;SP_BUILD_DLL;SP_DEBUG;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\ThirdPart\spdlog\include;src;..\ThirdPart\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_GLFW_WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ImportLibrary>..\bin\Debug-windows-x86_64\SPing\SPing.lib</ImportLibrary>
     </Link>
-    <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug-windows-x86_64\SPing\SPing.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\SPing\SPing.dll ..\bin\Debug-windows-x86_64\SandBox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\SPing\SPing.dll ..\bin\Debug-windows-x86_64\SandBox &gt; nul)</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <PrecompiledHeaderFile>SPingPre.h</PrecompiledHeaderFile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>SP_PLATFORM_WIN;SP_BUILD_DLL;SP_RELEASE;_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\ThirdPart\spdlog\include;src;..\ThirdPart\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_GLFW_WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <ImportLibrary>..\bin\Release-windows-x86_64\SPing\SPing.lib</ImportLibrary>
     </Link>
-    <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Release-windows-x86_64\SPing\SPing.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\SPing\SPing.dll ..\bin\Release-windows-x86_64\SandBox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\SPing\SPing.dll ..\bin\Release-windows-x86_64\SandBox &gt; nul)</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\SPing.h" />
-    <ClInclude Include="src\SPing\Application.h" />
-    <ClInclude Include="src\SPing\Core.h" />
-    <ClInclude Include="src\SPing\Entry.h" />
-    <ClInclude Include="src\SPing\Events\ApplicationEvent.h" />
-    <ClInclude Include="src\SPing\Events\Event.h" />
-    <ClInclude Include="src\SPing\Events\KeyEvent.h" />
-    <ClInclude Include="src\SPing\Events\MouseEvent.h" />
-    <ClInclude Include="src\SPing\Log.h" />
-    <ClInclude Include="src\SPingPre.h" />
+    <ClInclude Include="..\GLFW\GLFW\glfw3.h" />
+    <ClInclude Include="..\GLFW\GLFW\glfw3native.h" />
+    <ClInclude Include="..\GLFW\src\glfw_config.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\SPing\Application.cpp" />
-    <ClCompile Include="src\SPing\Log.cpp" />
-    <ClCompile Include="src\SPingPre.cpp">
-      <PrecompiledHeader>Create</PrecompiledHeader>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ThirdPart\projects\GLFW.vcxproj">
-      <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
-    </ProjectReference>
+    <ClCompile Include="..\GLFW\src\context.c" />
+    <ClCompile Include="..\GLFW\src\egl_context.c" />
+    <ClCompile Include="..\GLFW\src\init.c" />
+    <ClCompile Include="..\GLFW\src\input.c" />
+    <ClCompile Include="..\GLFW\src\monitor.c" />
+    <ClCompile Include="..\GLFW\src\osmesa_context.c" />
+    <ClCompile Include="..\GLFW\src\vulkan.c" />
+    <ClCompile Include="..\GLFW\src\wgl_context.c" />
+    <ClCompile Include="..\GLFW\src\win32_init.c" />
+    <ClCompile Include="..\GLFW\src\win32_joystick.c" />
+    <ClCompile Include="..\GLFW\src\win32_monitor.c" />
+    <ClCompile Include="..\GLFW\src\win32_thread.c" />
+    <ClCompile Include="..\GLFW\src\win32_time.c" />
+    <ClCompile Include="..\GLFW\src\win32_window.c" />
+    <ClCompile Include="..\GLFW\src\window.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -2,17 +2,28 @@ workspace "SPing"
 	configurations {"Debug", "Release"}
 	architecture "x64"
 
-
+-- 绝对路径----
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}/"
 thirdpart = "%{wks.location}/" .. "ThirdPart/"
 spdlog = thirdpart .. "spdlog/"
+
+thirdpartIncDir = {}
+thirdpartIncDir["GLFW"] = thirdpart .. "GLFW/include"
+
+binDir = "%{wks.location}/bin/"
+tmpBinDir = "%{wks.location}/bin-tmp/"
+
+-- 相对路径--
+---
+
+dofile "ThirdPart/projects/glfwpremake.lua"
 
 project "SPing"
 	kind "SharedLib"
 	location "SPing"
 	language "C++"
-	targetdir ("bin/" .. outputdir .. "%{prj.name}")
-	objdir  ("bin-tmp/" .. outputdir .. "%{prj.name}")
+	targetdir (binDir .. outputdir .. "%{prj.name}")
+	objdir  (binDir .. outputdir .. "%{prj.name}")
 
 	files
 	{
@@ -23,7 +34,14 @@ project "SPing"
 	includedirs
 	{
 		spdlog .. "include/",
-		"%{prj.name}/src"
+		"%{prj.name}/src",
+		"%{thirdpartIncDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	pchheader "SPingPre.h"
