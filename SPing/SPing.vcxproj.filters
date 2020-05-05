@@ -59,5 +59,6 @@
       <Filter>SPing</Filter>
     </ClCompile>
     <ClCompile Include="src\SPingPre.cpp" />
+    <ClCompile Include="src\SPing\Events\Event.cpp" />
   </ItemGroup>
 </Project>

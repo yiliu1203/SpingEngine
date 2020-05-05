@@ -12,11 +12,24 @@ namespace SPing {
 	{
 		//_Window = std::make_unique<Window>(Window::Create());
 		_Window = std::unique_ptr<Window>(Window::Create());
+		_Window->SetEventCallback(std::bind(&Application::OnEvent, this, std::placeholders::_1));
 
 	}
 
 	Application::~Application()
 	{
+	}
+
+	void Application::OnEvent(Event& event)
+	{
+		SP_CORE_INFO("Event: ({0})", event);
+
+		EventDispatcher eventDisPatcher(event);
+		eventDisPatcher.Dispatch<WindowCloseEvent>([this](WindowCloseEvent & e) ->bool
+			{
+				Close();
+				return true;
+			});
 	}
 
 	void Application::Run()
@@ -30,6 +43,11 @@ namespace SPing {
 			glClear(GL_COLOR_BUFFER_BIT);
 			_Window->OnUpdate();
 		}
+	}
+
+	void Application::Close()
+	{
+		_IsRunning = false;
 	}
 
 }

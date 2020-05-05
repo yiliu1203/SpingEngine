@@ -68,6 +68,9 @@ namespace SPing {
 			if (_Event.GetEventType() == T::GetStaticType())
 			{
 				_Event.m_handled = func(*(T*)(&_Event));
+
+				SP_CORE_INFO("{0} Be Handled", _Event.GetName());
+
 				return true;
 			}
 			return false;
@@ -79,9 +82,7 @@ namespace SPing {
 	};
 
 
-	//std::ostream& operator<<(std::ostream& os, const Event& event) {
-	//	return os << event.ToString();
-	//}
+
 
 
 	template <typename T>
@@ -92,6 +93,7 @@ namespace SPing {
 			return fmt::formatter<std::string>::format(a.ToString(), ctx);
 		}
 	};
+
 
 
 }

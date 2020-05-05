@@ -119,6 +119,7 @@
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\SPing\Application.cpp" />
+    <ClCompile Include="src\SPing\Events\Event.cpp" />
     <ClCompile Include="src\SPing\Log.cpp" />
     <ClCompile Include="src\SPingPre.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
