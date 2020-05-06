@@ -47,8 +47,8 @@ namespace SPing {
 
 		inline bool IsInCategory(EventCategory category) { return GetCategoryFlags() & category; }
 
-	protected:
-		bool m_handled = false;
+
+		bool Handled = false;
 		
 
 	};
@@ -60,14 +60,14 @@ namespace SPing {
 		using EventFn = std::function<bool(T&)>;
 
 	public:
-		EventDispatcher(Event& event) : _Event(event) {}
+		EventDispatcher(Event& event) : _Event(event) {}	
 
 		template<typename T>
 		bool Dispatch(EventFn<T> func)
 		{
 			if (_Event.GetEventType() == T::GetStaticType())
 			{
-				_Event.m_handled = func(*(T*)(&_Event));
+				_Event.Handled = func(*(T*)(&_Event));
 
 				SP_CORE_INFO("{0} Be Handled", _Event.GetName());
 

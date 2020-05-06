@@ -40,6 +40,12 @@
     <ClInclude Include="src\SPing\Events\MouseEvent.h">
       <Filter>SPing\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\SPing\Layer.h">
+      <Filter>SPing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SPing\LayerStack.h">
+      <Filter>SPing</Filter>
+    </ClInclude>
     <ClInclude Include="src\SPing\Log.h">
       <Filter>SPing</Filter>
     </ClInclude>
@@ -55,10 +61,18 @@
     <ClCompile Include="src\SPing\Application.cpp">
       <Filter>SPing</Filter>
     </ClCompile>
+    <ClCompile Include="src\SPing\Events\Event.cpp">
+      <Filter>SPing\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SPing\Layer.cpp">
+      <Filter>SPing</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SPing\LayerStack.cpp">
+      <Filter>SPing</Filter>
+    </ClCompile>
     <ClCompile Include="src\SPing\Log.cpp">
       <Filter>SPing</Filter>
     </ClCompile>
     <ClCompile Include="src\SPingPre.cpp" />
-    <ClCompile Include="src\SPing\Events\Event.cpp" />
   </ItemGroup>
 </Project>

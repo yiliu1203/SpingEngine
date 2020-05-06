@@ -10,7 +10,7 @@ int main(int argc, char** argv)
 	SPing::Log::Init();
 	auto app = SPing::CreateApplication();
 	
-	//SP_CLIENT_INFO("App Initial");
+	SP_INFO("App Initial");
 
 	app->Run();
 	return 1; 

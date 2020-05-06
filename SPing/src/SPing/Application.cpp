@@ -30,6 +30,13 @@ namespace SPing {
 				Close();
 				return true;
 			});
+		
+		for (auto it = _LayerStack.end(); it != _LayerStack.begin();)
+		{
+			(*--it)->OnEvent(event);
+			if (event.Handled)
+				break;
+		}
 	}
 
 	void Application::Run()
@@ -41,13 +48,28 @@ namespace SPing {
 		{
 			glClearColor(1, 0, 0, 1);
 			glClear(GL_COLOR_BUFFER_BIT);
+			
+			for (Layer* layer : _LayerStack)
+				layer->OnUpdate();
+
 			_Window->OnUpdate();
+
 		}
 	}
 
 	void Application::Close()
 	{
 		_IsRunning = false;
+	}
+
+	void Application::PushLayer(Layer* layer)
+	{
+		_LayerStack.PushLayer(layer);
+	}
+
+	void Application::PushOverLayer(Layer* layer)
+	{
+		_LayerStack.PushOverlay(layer);
 	}
 
 }

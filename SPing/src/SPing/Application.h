@@ -5,8 +5,8 @@
 #include "Core.h"
 #include "Window.h"
 #include "SPing/Events/Event.h"
+#include "SPing/LayerStack.h"
 
-//#define SP_API __declspec(dllexport)  // ∆Ê›‚¡À°£°£°£
 
 namespace SPing {
 
@@ -21,10 +21,14 @@ namespace SPing {
 
 		void OnEvent(Event& event);
 
+		void PushLayer(Layer* layer);
+		void PushOverLayer(Layer* layer);
+
 
 	private:
 		std::unique_ptr<Window> _Window;
 		bool _IsRunning;
+		LayerStack _LayerStack;
 
 	};
 	

@@ -68,10 +68,12 @@ project "SPing"
 	filter "configurations:Debug"
 		defines {"SP_DEBUG", "_DEBUG"}
 		symbols "On"
+		buildoptions "/MDd"
 
 	filter "configurations:Release"
 		defines {"SP_RELEASE", "_RELEASE"}
 		optimize "On"
+		buildoptions "/MD"
 
 
 project "SandBox"
@@ -116,7 +118,9 @@ project "SandBox"
 	filter "configurations:Debug"
 		defines {"SP_DEBUG", "_DEBUG"}
 		symbols "On"
+		buildoptions "/MDd"
 
 	filter "configurations:Release"
 		defines {"SP_RELEASE", "_RELEASE"}
 		optimize "On"
+		buildoptions "/MD"
