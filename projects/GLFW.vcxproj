@@ -41,14 +41,14 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>..\..\bin\Debug-windows-x86_64\GLFW\</OutDir>
-    <IntDir>..\..\bin-tmp\Debug-windows-x86_64\GLFW\</IntDir>
+    <OutDir>..\bin\Debug-windows-x86_64\GLFW\</OutDir>
+    <IntDir>..\bin-tmp\Debug-windows-x86_64\GLFW\</IntDir>
     <TargetName>GLFW</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>..\..\bin\Release-windows-x86_64\GLFW\</OutDir>
-    <IntDir>..\..\bin-tmp\Release-windows-x86_64\GLFW\</IntDir>
+    <OutDir>..\bin\Release-windows-x86_64\GLFW\</OutDir>
+    <IntDir>..\bin-tmp\Release-windows-x86_64\GLFW\</IntDir>
     <TargetName>GLFW</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
@@ -85,26 +85,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\GLFW\GLFW\glfw3.h" />
-    <ClInclude Include="..\GLFW\GLFW\glfw3native.h" />
-    <ClInclude Include="..\GLFW\src\glfw_config.h" />
+    <ClInclude Include="..\ThirdPart\GLFW\include\GLFW\glfw3.h" />
+    <ClInclude Include="..\ThirdPart\GLFW\include\glfw3native.h" />
+    <ClInclude Include="..\ThirdPart\GLFW\src\glfw_config.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\GLFW\src\context.c" />
-    <ClCompile Include="..\GLFW\src\egl_context.c" />
-    <ClCompile Include="..\GLFW\src\init.c" />
-    <ClCompile Include="..\GLFW\src\input.c" />
-    <ClCompile Include="..\GLFW\src\monitor.c" />
-    <ClCompile Include="..\GLFW\src\osmesa_context.c" />
-    <ClCompile Include="..\GLFW\src\vulkan.c" />
-    <ClCompile Include="..\GLFW\src\wgl_context.c" />
-    <ClCompile Include="..\GLFW\src\win32_init.c" />
-    <ClCompile Include="..\GLFW\src\win32_joystick.c" />
-    <ClCompile Include="..\GLFW\src\win32_monitor.c" />
-    <ClCompile Include="..\GLFW\src\win32_thread.c" />
-    <ClCompile Include="..\GLFW\src\win32_time.c" />
-    <ClCompile Include="..\GLFW\src\win32_window.c" />
-    <ClCompile Include="..\GLFW\src\window.c" />
+    <ClCompile Include="..\ThirdPart\GLFW\src\context.c" />
+    <ClCompile Include="..\ThirdPart\GLFW\src\egl_context.c" />
+    <ClCompile Include="..\ThirdPart\GLFW\src\init.c" />
+    <ClCompile Include="..\ThirdPart\GLFW\src\input.c" />
+    <ClCompile Include="..\ThirdPart\GLFW\src\monitor.c" />
+    <ClCompile Include="..\ThirdPart\GLFW\src\osmesa_context.c" />
+    <ClCompile Include="..\ThirdPart\GLFW\src\vulkan.c" />
+    <ClCompile Include="..\ThirdPart\GLFW\src\wgl_context.c" />
+    <ClCompile Include="..\ThirdPart\GLFW\src\win32_init.c" />
+    <ClCompile Include="..\ThirdPart\GLFW\src\win32_joystick.c" />
+    <ClCompile Include="..\ThirdPart\GLFW\src\win32_monitor.c" />
+    <ClCompile Include="..\ThirdPart\GLFW\src\win32_thread.c" />
+    <ClCompile Include="..\ThirdPart\GLFW\src\win32_time.c" />
+    <ClCompile Include="..\ThirdPart\GLFW\src\win32_window.c" />
+    <ClCompile Include="..\ThirdPart\GLFW\src\window.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

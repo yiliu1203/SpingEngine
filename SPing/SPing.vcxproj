@@ -43,14 +43,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>..\bin\Debug-windows-x86_64\SPing\</OutDir>
-    <IntDir>..\bin\Debug-windows-x86_64\SPing\</IntDir>
+    <IntDir>..\bin-tmp\Debug-windows-x86_64\SPing\</IntDir>
     <TargetName>SPing</TargetName>
     <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>..\bin\Release-windows-x86_64\SPing\</OutDir>
-    <IntDir>..\bin\Release-windows-x86_64\SPing\</IntDir>
+    <IntDir>..\bin-tmp\Release-windows-x86_64\SPing\</IntDir>
     <TargetName>SPing</TargetName>
     <TargetExt>.dll</TargetExt>
   </PropertyGroup>
@@ -132,7 +132,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ThirdPart\projects\GLFW.vcxproj">
+    <ProjectReference Include="..\projects\GLFW.vcxproj">
       <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
     </ProjectReference>
   </ItemGroup>

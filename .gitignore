@@ -14,5 +14,9 @@
 /bin-tmp
 /.vs
 *log
-.dll
-.lib
+*.dll
+*.lib
+*.vcxproj
+*.filters
+*.user
+/logs

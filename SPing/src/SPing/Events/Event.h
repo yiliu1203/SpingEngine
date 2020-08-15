@@ -17,7 +17,7 @@ namespace SPing {
 
 	};
 
-	enum EventCategory
+	enum class EventCategory
 	{
 		None = 0,
 		EventCategoryApplication = BIT(0),

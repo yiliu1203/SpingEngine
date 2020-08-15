@@ -5,10 +5,17 @@ workspace "SPing"
 -- 绝对路径----
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}/"
 thirdpart = "%{wks.location}/" .. "ThirdPart/"
-spdlog = thirdpart .. "spdlog/"
+testdir = "%{wks.location}/" .. "Test/"
+exampleDir = "%{wks.location}/" .. "Example/"
+
+spdlog_root = thirdpart .. "spdlog/"
+GLFW_root = thirdpart .. "GLFW/"
+testspdlog_root = testdir .. "Testspdlog/"
 
 thirdpartIncDir = {}
 thirdpartIncDir["GLFW"] = thirdpart .. "GLFW/include"
+thirdpartIncDir["spdlog"] = thirdpart .. "spdlog/include"
+
 
 binDir = "%{wks.location}/bin/"
 tmpBinDir = "%{wks.location}/bin-tmp/"
@@ -16,14 +23,17 @@ tmpBinDir = "%{wks.location}/bin-tmp/"
 -- 相对路径--
 ---
 
-dofile "ThirdPart/projects/glfwpremake.lua"
+dofile "projects/glfw_premake.lua"
+dofile "projects/spdlog_premake.lua"
+dofile "projects/testspdlog_premake.lua"
 
 project "SPing"
 	kind "SharedLib"
 	location "SPing"
 	language "C++"
+	cppdialect "C++17"
 	targetdir (binDir .. outputdir .. "%{prj.name}")
-	objdir  (binDir .. outputdir .. "%{prj.name}")
+	objdir  (tmpBinDir .. outputdir .. "%{prj.name}")
 
 	files
 	{
@@ -33,9 +43,9 @@ project "SPing"
 
 	includedirs
 	{
-		spdlog .. "include/",
+		spdlog_root .. "include/",
 		"%{prj.name}/src",
-		"%{thirdpartIncDir.GLFW}"
+		thirdpartIncDir.GLFW,
 	}
 
 	links
@@ -62,7 +72,6 @@ project "SPing"
 		postbuildcommands
 		{
 			("{COPY} %{cfg.buildtarget.relpath} ../bin/" ..outputdir.. "/SandBox")
-
 		}
 
 	filter "configurations:Debug"
@@ -80,6 +89,7 @@ project "SandBox"
 	location "SandBox"
 	kind "ConsoleApp"
 	language "C++"
+	cppdialect "C++17"
 	targetdir ("bin/" .. outputdir .. "%{prj.name}")
 	objdir  ("bin-tmp/" .. outputdir .. "%{prj.name}")
 
@@ -91,7 +101,7 @@ project "SandBox"
 
 	includedirs
 	{
-		spdlog .. "include/",
+		spdlog_root .. "include/",
 		"SPing/src"
 	}
 
