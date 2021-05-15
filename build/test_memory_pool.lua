@@ -1,6 +1,6 @@
 
 
-project "testspdlog"
+project "TestMemoryPool"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"
@@ -8,17 +8,15 @@ project "testspdlog"
 	objdir  (tmpBinDir .. outputdir .. "%{prj.name}")
 	defines {}
 
-
 	files
 	{
-		"%{testspdlog_root}**.h",
-		"%{testspdlog_root}**.cpp",
+		"%{Test_memory_pool_root}**.h",
+		"%{Test_memory_pool_root}**.cpp",
 	}
 
 	includedirs
 	{
-		testspdlog_root,
-		thirdpartIncDir.spdlog,
+		Test_memory_pool_root,
 	}
 
 	links

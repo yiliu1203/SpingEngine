@@ -7,7 +7,7 @@
 
 namespace SPing {
 
-	enum class EventType
+	enum EventType
 	{
 		None = 0,
 		WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
@@ -17,9 +17,9 @@ namespace SPing {
 
 	};
 
-	enum class EventCategory
+	enum EventCategory
 	{
-		None = 0,
+		None_ = 0,
 		EventCategoryApplication = BIT(0),
 		EventCategoryInput = BIT(1),
 		EventCategoryKeyboard = BIT(2),
@@ -45,7 +45,7 @@ namespace SPing {
 		virtual int GetCategoryFlags() const = 0;
 		virtual std::string ToString() const { return GetName(); }
 
-		inline bool IsInCategory(EventCategory category) { return GetCategoryFlags() & category; }
+		inline bool IsInCategory(EventCategory category) { return false; }
 
 
 		bool Handled = false;

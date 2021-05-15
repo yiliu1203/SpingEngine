@@ -3,7 +3,6 @@
 project "spdlog"
 	kind "staticLib"
 	language "C++"
-	cppdialect "C++17"
 	targetdir (binDir .. outputdir .. "%{prj.name}")
 	objdir  (tmpBinDir .. outputdir .. "%{prj.name}")
 	defines {"SPDLOG_COMPILED_LIB"}

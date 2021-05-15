@@ -6,8 +6,8 @@ project "GLFW"
 
 	files
 	{
-		GLFW_root .. "include/GLFW/glfw3.h",
-		GLFW_root .. "include/glfw3native.h",
+		GLFW_root .. "include/../GLFW/glfw3.h",
+		GLFW_root .. "include/../GLFW/glfw3native.h",
 		GLFW_root .. "src/glfw_config.h",
 		GLFW_root .. "src/context.c",
 		GLFW_root .. "src/init.c",

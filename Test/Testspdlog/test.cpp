@@ -1,11 +1,8 @@
 #include "spdlog/spdlog.h"
-#include "spdlog/sinks/basic_file_sink.h"
+#include <iostream>
 
 int main()
 {
-
-
-
 	spdlog::info("Welcome to spdlog!");
 	spdlog::error("Some error message with arg: {}", 1);
 
@@ -26,7 +23,20 @@ int main()
 	SPDLOG_TRACE("Some trace message with param {}", 42);
 	SPDLOG_DEBUG("Some debug message");
 
-	// Set the default logger to file logger
-	auto file_logger = spdlog::basic_logger_mt("basic_logger", "logs/basic.txt");
-	spdlog::set_default_logger(file_logger);
+	int* a = (int*)malloc(4);
+	*a = 5;
+	std::cout << a << std::endl << *a;
+	
+
+	void* b = VirtualAlloc(NULL, 1000, MEM_COMMIT, PAGE_READWRITE);
+	void* c = VirtualAlloc(NULL, 1000, MEM_COMMIT, PAGE_READWRITE);
+	std::cout << b << std::endl << c;
+
+	for (int i = 1; i < 5; i++) 
+	{
+
+	}
+
+
+
 }

@@ -13,7 +13,6 @@ namespace SPing {
 		//_Window = std::make_unique<Window>(Window::Create());
 		_Window = std::unique_ptr<Window>(Window::Create());
 		_Window->SetEventCallback(std::bind(&Application::OnEvent, this, std::placeholders::_1));
-
 	}
 
 	Application::~Application()
