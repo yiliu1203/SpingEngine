@@ -22,6 +22,7 @@ thirdpartIncDir["spdlog"] = thirdpart .. "spdlog/include"
 -- 测试项目路径
 Test_spdlog_root = testdir .. "Testspdlog/"
 Test_memory_pool_root = testdir .. "TestMemoryPool/"
+test_others_root = testdir .. "TestOthers/"
 
 
 binDir = "%{wks.location}/bin/"
@@ -35,3 +36,4 @@ dofile "build/glfw_premake.lua"
 dofile "build/spdlog_premake.lua"
 dofile "build/testspdlog_premake.lua"
 dofile "build/test_memory_pool.lua"
+dofile "build/test_others.lua"

@@ -42,7 +42,8 @@ project "SPing"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" ..outputdir.. "/SandBox")
+			("{COPY} %{cfg.buildtarget.relpath} ../bin/" ..outputdir.. "/SandBox"),
+			("{COPY} %{cfg.buildtarget.relpath} ../bin/" ..outputdir.. "/TestOthers")
 		}
 
 	filter "configurations:Debug"

@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SandBox", "build\SandBox.vc
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestMemoryPool", "build\TestMemoryPool.vcxproj", "{3860C270-242E-B676-0DC2-269DF92E92DB}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestOthers", "build\TestOthers.vcxproj", "{5AA4E941-465C-2B8F-AF63-04EB9B3AC67F}"
+EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestSpdlog", "build\TestSpdlog.vcxproj", "{AED0F34A-9A88-3598-0390-0EF4EF66D088}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "spdlog", "build\spdlog.vcxproj", "{8EAD431C-7A4F-6EF2-630A-82464F4BF542}"
@@ -35,6 +37,10 @@ Global
 		{3860C270-242E-B676-0DC2-269DF92E92DB}.Debug|Win32.Build.0 = Debug|Win32
 		{3860C270-242E-B676-0DC2-269DF92E92DB}.Release|Win32.ActiveCfg = Release|Win32
 		{3860C270-242E-B676-0DC2-269DF92E92DB}.Release|Win32.Build.0 = Release|Win32
+		{5AA4E941-465C-2B8F-AF63-04EB9B3AC67F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5AA4E941-465C-2B8F-AF63-04EB9B3AC67F}.Debug|Win32.Build.0 = Debug|Win32
+		{5AA4E941-465C-2B8F-AF63-04EB9B3AC67F}.Release|Win32.ActiveCfg = Release|Win32
+		{5AA4E941-465C-2B8F-AF63-04EB9B3AC67F}.Release|Win32.Build.0 = Release|Win32
 		{AED0F34A-9A88-3598-0390-0EF4EF66D088}.Debug|Win32.ActiveCfg = Debug|Win32
 		{AED0F34A-9A88-3598-0390-0EF4EF66D088}.Debug|Win32.Build.0 = Debug|Win32
 		{AED0F34A-9A88-3598-0390-0EF4EF66D088}.Release|Win32.ActiveCfg = Release|Win32
