@@ -8,6 +8,7 @@
 
 namespace SPing
 {
+	class Context;
 
 	class SP_API WorkItem
 	{
@@ -25,7 +26,7 @@ namespace SPing
 		friend class WorkerThread;
 		static unsigned priority;
 	public:
-		WorkQueue();
+		WorkQueue(Context* context);
 		~WorkQueue();
 		void CreateThreads(unsigned count);
 		void AddWorkItem(std::shared_ptr<WorkItem>& workItem);

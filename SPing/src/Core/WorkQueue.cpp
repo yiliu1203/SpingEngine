@@ -6,7 +6,7 @@ namespace SPing
 {
 	unsigned WorkQueue::priority = 0;
 
-	WorkQueue::WorkQueue() : Object()
+	WorkQueue::WorkQueue(Context* context) : Object(context)
 	{
 	}
 
@@ -68,10 +68,12 @@ namespace SPing
 
 			std::cout << "isEmpty" << (preMap_.begin() == preMap_.end());
 			auto item = preMap_.begin();
+			// 要先获取 这个指针，erase 之后 这个iter 就失效了
+			WorkItem* workItem = item->second;
 			preMap_.erase(item->first);
 			queueMutex_.Release();
-			item->second->workFunction_(item->second, index);
-			item->second->completed_ = true;
+			workItem->workFunction_(workItem, index);
+			workItem->completed_ = true;
 		}
 			
 	}

@@ -1,7 +1,10 @@
+#pragma once
 #include "SPingPre.h"
 #include "DataStruct/StringHash.h"
 
 namespace SPing {
+
+	class Context;
 
 	class SP_API TypeInfo
 	{
@@ -115,7 +118,7 @@ namespace SPing {
 	class SP_API Object : public RefCounted
 	{
 	public:
-		Object() {}
+		Object(Context* context): context_(context) {}
 		virtual ~Object() {};
 
 		static const TypeInfo* GetTypeInfoStatic() { return nullptr; }
@@ -128,6 +131,9 @@ namespace SPing {
 		template <typename T>
 		bool IsInstanceOf() const { return IsInstanceOf(T::GetTypeInfoStatic()); }
 
+	private:
+		Context* context_;
+
 	};
 
 
@@ -138,6 +144,38 @@ namespace SPing {
         virtual const std::string GetTypeName() const { return TYPE_NAME::GetTypeInfoStatic()->GetTypeName();} \
         virtual const TypeInfo* GetTypeInfo() const { return TYPE_NAME::GetTypeInfoStatic();}\
 
+
+
+	// Object Factory
+	class SP_API ObjectFactory : public RefCounted
+	{
+	public:
+		ObjectFactory(Context* context) : context_(context) {}
+		const TypeInfo* GetTypeInfo() const { return typeInfo_; }
+		const std::string GetTypeName() const { return typeInfo_->GetTypeName(); }
+		const StringHash& GetType() const { return typeInfo_->GetType(); }
+		//virtual std::shared_ptr<Object> CreateObject() = 0;
+	protected:
+		const TypeInfo* typeInfo_{};  // 它实质上是指向一个静态局部变量
+		Context* context_;
+	};
+
+	template <typename T>
+	class ObjectFactoryImpl : public ObjectFactory
+	{
+	public:
+		// 父类的无参数构造函数会隐式调用，但是有参数的构造函数需要显示调用
+		ObjectFactoryImpl(Context* context): ObjectFactory(context)
+		{
+			typeInfo_ = T::GetTypeInfoStatic();
+		}
+		/*std::shared_ptr<Object> CreateObject()
+		{
+			return std::make_shared<Object>(new T(context_));
+		}*/
+	};
+
+	
 
 }
 

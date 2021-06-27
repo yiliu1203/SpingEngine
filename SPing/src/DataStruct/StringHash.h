@@ -1,3 +1,4 @@
+#pragma once
 #include "SPingPre.h"
 namespace SPing {
 
@@ -23,6 +24,10 @@ namespace SPing {
 		}
 		bool operator != (const StringHash& rhs) const {
 			return (value_ != rhs.value_);
+		}
+		bool operator < (const StringHash& rhs) const
+		{
+			return (value_ < rhs.value_);
 		}
 
 	private:
