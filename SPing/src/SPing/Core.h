@@ -9,7 +9,7 @@
 		#ifdef SP_BUILD_DLL
 			#define SP_API __declspec(dllexport)
 		#else
-			#define SP_API __declspec(dllimport)
+			#define SP_API 
 		#endif
 
 
@@ -39,7 +39,6 @@
 	#endif // SP_ENABLE_ASSERT
 	
 	//---------------------------------------------------
-
 
 
 #endif

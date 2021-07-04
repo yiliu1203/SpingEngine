@@ -14,7 +14,6 @@
 
 #include "SPing/Log.h"
 //#include "SPing/Layer.h"   ???
-#include "SPing/LayerStack.h"
 
 
 #ifdef SP_PLATFORM_WIN

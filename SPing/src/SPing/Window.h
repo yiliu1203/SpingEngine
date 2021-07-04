@@ -1,50 +1,50 @@
-#ifndef SP_WINDOW_H
-#define SP_WINDOW_H
+#pragma once
+#include "LSWin.h"
+#include "LS3DException.h"
+#include <Windows.h>
+#include "Keyboard.h"
+#include "Mouse.h"
+#include "Graphics.h"
+#include <optional>
+#include <memory>
 
-#include "SPingPre.h"
-#include "SPing/Core.h"
-#include "SPing/Events/Event.h"
-
-namespace SPing
+class Window
 {
-	class SP_API WindowProps
+public:
+	Keyboard kbd;
+	Mouse mouse;
+	std::unique_ptr<Graphics> pGrpahics;
+
+private:
+	class WindowClass
 	{
 	public:
-		WindowProps(const std::string& title = "Hello SPing", unsigned int width = 1334, unsigned int height = 750) :
-			Title(title), Width(width), Height(height) {
-
-		}
-
-		std::string Title;
-		unsigned int Width;
-		unsigned int Height;
-
+		static const char* GetName() noexcept;
+		static HINSTANCE GetInstance() noexcept;
+	private:
+		WindowClass() noexcept;
+		~WindowClass() noexcept;
+		WindowClass(const WindowClass&) = delete;
+		WindowClass& operator=(const WindowClass&) = delete;
+		static constexpr const char* wndClassName = "LD3D";
+		static WindowClass wndClass;
+		HINSTANCE hInst;
 	};
+public:
+	Window(int width, int height, const char* name);
+	~Window();
+	Window(const Window&) = delete;
+	Window& operator=(const Window&) = delete;
+	void SetTitle(const char* title) const noexcept;
+	std::optional<int> ProcessMessage() const noexcept;
+	Graphics& GetGraphics();
 
-	class SP_API Window
-	{
-	public:
-		using EventCallbackFn = std::function<void(Event&)>;
+private:
+	static LRESULT CALLBACK HandleMsgSetup(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) noexcept;
+	LRESULT HandleMsg(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) noexcept;
+private:
+	int width;
+	int height;
+	HWND hWnd;
+};
 
-		virtual ~Window()
-		{
-		}
-
-		virtual void OnUpdate() = 0;
-		virtual unsigned int GetWidth() const = 0;
-		virtual unsigned int GetHeight() const = 0;
-		
-		virtual void SetEventCallback(const EventCallbackFn& callback) = 0;
-		virtual void SetVSync(bool enabled) = 0;
-		virtual bool IsVSync() const = 0;
-
-		static Window* Create(const WindowProps& props = WindowProps());
-
-	};
-
-
-
-}
-
-
-#endif

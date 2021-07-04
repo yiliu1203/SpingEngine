@@ -31,7 +31,7 @@ tmpBinDir = "%{wks.location}/bin-tmp/"
 -- 相对路径--
 ---
 dofile "build/SPing_premake.lua"
-dofile "build/SandBox_premake.lua"
+--dofile "build/SandBox_premake.lua"
 dofile "build/glfw_premake.lua"
 dofile "build/spdlog_premake.lua"
 dofile "build/testspdlog_premake.lua"

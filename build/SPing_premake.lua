@@ -1,8 +1,9 @@
 
 project "SPing"
-	kind "SharedLib"
+	kind "WindowedApp"
 	language "C++"
 	cppdialect "C++17"
+	characterset "MBCS"
 	targetdir (binDir .. outputdir .. "%{prj.name}")
 	objdir  (tmpBinDir .. outputdir .. "%{prj.name}")
 
@@ -21,8 +22,6 @@ project "SPing"
 
 	links
 	{
-		"GLFW",
-		"opengl32.lib"
 	}
 
 	-- pchheader (SPing_root .. "src/SPingPre.h")
@@ -36,7 +35,6 @@ project "SPing"
 		defines
 		{
 			"SP_PLATFORM_WIN",
-			"SP_BUILD_DLL",
 			"SP_ENABLE_ASSERT",
 		}
 
