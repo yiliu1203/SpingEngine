@@ -1,0 +1,21 @@
+[
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.01_HelloWorld.pdb", "/Od", "/ISource\\SPing", "/EHsc", "/Fobuild\\.objs\\01_HelloWorld\\windows\\x86\\debug\\Source\\Samples\\01_HelloWorld\\HelloWorld.cpp.obj", "Source\\Samples\\01_HelloWorld\\HelloWorld.cpp"],
+  "file": "Source\\Samples\\01_HelloWorld\\HelloWorld.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\SPing.pdb", "/Od", "/EHsc", "/Fobuild\\.objs\\SPing\\windows\\x86\\debug\\Source\\SPing\\main.cpp.obj", "Source\\SPing\\main.cpp"],
+  "file": "Source\\SPing\\main.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\SPing.pdb", "/Od", "/EHsc", "/Fobuild\\.objs\\SPing\\windows\\x86\\debug\\Source\\SPing\\SPingPre.cpp.obj", "Source\\SPing\\SPingPre.cpp"],
+  "file": "Source\\SPing\\SPingPre.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\SPing.pdb", "/Od", "/EHsc", "/Fobuild\\.objs\\SPing\\windows\\x86\\debug\\Source\\SPing\\Test.cpp.obj", "Source\\SPing\\Test.cpp"],
+  "file": "Source\\SPing\\Test.cpp"
+}]
