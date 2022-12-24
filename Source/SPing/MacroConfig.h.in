@@ -1,0 +1,2 @@
+${define SP_PLATFORM_WIN}
+${define SP_BUILD_DLL}
