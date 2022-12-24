@@ -11,8 +11,9 @@
 #include <map>
 #include <functional>
 #include <type_traits>
-
+#include "SPing/Core.h"
 #include "SPing/Log.h"
+
 //#include "SPing/Layer.h"   ???
 
 

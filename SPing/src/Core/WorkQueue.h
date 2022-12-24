@@ -36,7 +36,6 @@ namespace SPing
 		
 		void ProcessItems(unsigned index);
 		void PurgeCompleted();
-		//void PurgePool();
 		void HandleBeginFrame();
 
 		std::vector<std::shared_ptr<Thread>> thread_;

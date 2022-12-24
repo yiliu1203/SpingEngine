@@ -1,8 +1,9 @@
 #pragma once
 #include <bitset>
 #include <queue>
+#include "SPingPre.h"
 
-class Keyboard
+class SP_API Keyboard
 {
 	friend class Window;
 

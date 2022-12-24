@@ -6,6 +6,8 @@
 #include "Core/Context.h"
 #include "Core/ComponentBase.h"
 
+#pragma comment(lib, "SPing.lib")
+
 void workFunction(const SPing::WorkItem* workItem, unsigned idx)
 {
 	std::cout << "workFunction " << idx << std::endl;
@@ -28,7 +30,6 @@ int main()
 {
 	std::cout << "Hello" << std::endl;
 	SPing::Context context;
-	// test WorkQueue
 	SPing::WorkQueue workQueue(static_cast<SPing::Context*> (&context) );
 	
 	std::shared_ptr<SPing::WorkItem> item1 = std::make_shared<SPing::WorkItem>();
@@ -40,7 +41,7 @@ int main()
 	workQueue.AddWorkItem(item2);
 	workQueue.CreateThreads(10);
 
-	
+
 	for (size_t i = 0; i < 10; i++)
 		Sleep(100);
 
@@ -50,10 +51,12 @@ int main()
 
 	std::cout << workQueue.priority << std::endl;
 
-	// test Context & ObjectFactory
-	//context.RegisterFactory<SPing::ComponentBase>();
+	//// test Context & ObjectFactory
+	////context.RegisterFactory<SPing::ComponentBase>();
 	SPing::ComponentBase t(static_cast<SPing::Context*> (&context));
 	auto impl = new SPing::ObjectFactoryImpl<SPing::ComponentBase>(static_cast<SPing::Context*> (&context));
 	context.RegisterFactory(std::shared_ptr<SPing::ObjectFactory>(impl));
+
+	spdlog::debug("This message should be displayed..");
 
 }

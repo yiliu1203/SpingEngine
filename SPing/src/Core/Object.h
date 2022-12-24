@@ -50,7 +50,7 @@ namespace SPing {
 	/// 这个结构是弱引用的基础，当还存在弱引用时，弱引用还可以访问计数器
 	/// 计数器对象还没有释放，但是外层的object对象已经释放了，
 	/// </summary>
-	struct RefCount{
+	struct SP_API RefCount{
 		int refs_;
 		int weakRefs_;
 		RefCount(): refs_(0), weakRefs_(0) {};
@@ -114,11 +114,13 @@ namespace SPing {
 		RefCount* refCount_;
 	};
 
-
+	
 	class SP_API Object : public RefCounted
 	{
 	public:
-		Object(Context* context): context_(context) {}
+		Object(Context* context){
+			context_ = context;
+		}
 		virtual ~Object() {};
 
 		static const TypeInfo* GetTypeInfoStatic() { return nullptr; }

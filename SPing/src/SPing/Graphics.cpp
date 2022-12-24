@@ -118,6 +118,7 @@ void Graphics::DrawTestTriangle()
 	comDeviceContext->RSSetViewports(1u, &vp);
 
 	GFX_ASSERT_HR_ONLY_INFO(comDeviceContext->Draw(std::size(vertices), 0u));
+	//comDeviceContext->Draw(std::size(vertices), 0u);
 
 
 }

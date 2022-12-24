@@ -7,8 +7,9 @@
 #include "Graphics.h"
 #include <optional>
 #include <memory>
+#include "SPingPre.h"
 
-class Window
+class SP_API Window
 {
 public:
 	Keyboard kbd;

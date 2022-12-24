@@ -9,7 +9,7 @@
 		#ifdef SP_BUILD_DLL
 			#define SP_API __declspec(dllexport)
 		#else
-			#define SP_API 
+			#define SP_API
 		#endif
 
 

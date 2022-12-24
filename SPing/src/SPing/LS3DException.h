@@ -55,6 +55,7 @@ public:
 
 #define WIN_ASSERT_BOOL(x) if (x == 0) throw WinException(__LINE__, __FILE__, GetLastError());
 #define WIN_ASSERT_HR(hr) if (FAILED(hr)) throw WinException(__LINE__, __FILE__, hr);
+#define HR(hr) if (FAILED(hr)) throw WinException(__LINE__, __FILE__, hr);
 #define WIN_ASSERT_NULL(N) if(N == nullptr) throw WinException(__LINE__, __FILE__, GetLastError());
 #define GFX_ASSERT_HR(hr) DxgiInfoManager::Instance().Set(); if (FAILED(hr)) throw GfxException(__LINE__, __FILE__, hr);
 #define GFX_ASSERT_HR_ONLY_INFO(call) DxgiInfoManager::Instance().Set();\

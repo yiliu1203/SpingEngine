@@ -8,26 +8,9 @@
 
 int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE prewInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-	try
-	{
-		App app{};
-		app.Go();
 
-	}
-	catch (LS3DException& e)
-	{
-		MessageBox(nullptr, e.what(), e.GetType(), MB_OK| MB_ICONEXCLAMATION);
-	}
-	catch (std::exception& e)
-	{
-		MessageBox(nullptr, e.what(), "Standard Exception", MB_OK | MB_ICONEXCLAMATION);
-	}
-	catch (...)
-	{
-		MessageBox(nullptr, "UnKnow ExceptionType", "UnKnow Exception", MB_OK | MB_ICONEXCLAMATION);
-	}
+	App app{};
+	app.Go();
 	return -1;
 	
-	
-
 }

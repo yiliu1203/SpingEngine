@@ -1,7 +1,8 @@
 #pragma once
 #include "Window.h"
+#include "SPingPre.h"
 
-class App
+class SP_API App
 {
 public:
 	App();
