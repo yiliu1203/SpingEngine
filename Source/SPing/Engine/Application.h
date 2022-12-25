@@ -1,21 +1,28 @@
 #pragma once
 
 #include "SPingPre.h"
+#include "WinWindow.h"
 
-namespace SPing {
+namespace SPing 
+{
 
-    class SP_API Application {
-    
-    public:
-        explicit Application();
-        virtual void SetUp() {};
-        virtual void Start() {};
-        virtual void Stop() {};
-        int Run();
+class SP_API Application {
 
-    private:
-        void _DoFrame();
+public:
+    explicit Application();
+    int Run();
 
-    };
+protected:
+    virtual void SetUp() {};
+    virtual void Start() {};
+    virtual void Stop() {};
+    void DoFrame();
+
+    int exitCode_;
+
+private:
+    WinWindow window;
+
+};
 
 }

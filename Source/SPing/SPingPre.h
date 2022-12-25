@@ -11,7 +11,8 @@
 #include <map>
 #include <functional>
 #include <type_traits>
-#include "Generated/MacroConfig.h"
+#include <wchar.h>
+// #include "Generated/MacroConfig.h"
 
 #ifdef SP_PLATFORM_WIN
 	#include <Windows.h>

@@ -1,8 +1,11 @@
 add_rules("mode.debug", "mode.release")
+add_defines("SP_PLATFORM_WIN")
 
 target("SPing")
     set_kind("static")
-    add_files("Source/SPing/*.cpp")
+    add_includedirs("Source/SPing")
+    add_files("Source/SPing/**/*.cpp")
+    add_defines("SP_BUILD_DLL")
     set_configvar("SP_PLATFORM_WIN", 1)
     set_configvar("SP_BUILD_DLL", 1)
     set_configdir("Source/SPing/Generated")

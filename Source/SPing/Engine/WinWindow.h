@@ -11,9 +11,13 @@ public:
     ~WinWindow();
     WinWindow(const WinWindow&) = delete;
     WinWindow& operator= (const WinWindow&) = delete;
-    void SetTitile(const char* title) const noexcept;
+    void SetTitle(const char* title) const;
+    int ProcessMessage() const;
+
 
 private:
+    static LRESULT CALLBACK HandleMsgSetup(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) noexcept;
+    LRESULT HandleMsg(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) noexcept;
     int width_;
     int height_;
     HWND hWnd_;
