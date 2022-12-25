@@ -7,12 +7,13 @@
 #include <unordered_set>
 #include <functional>
 #include <sstream>
+
 #include <algorithm>
 #include <map>
 #include <functional>
 #include <type_traits>
 #include <wchar.h>
-// #include "Generated/MacroConfig.h"
+#include "Generated/MacroConfig.h"
 
 #ifdef SP_PLATFORM_WIN
 	#include <Windows.h>

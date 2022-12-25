@@ -6,5 +6,5 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE prevInstance, PSTR cmdLine, in
 {
 	Application app;
 	app.Run();
-	return 1;
+	return 2;
 }
