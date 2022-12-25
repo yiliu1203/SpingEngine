@@ -13,7 +13,7 @@
 #include <functional>
 #include <type_traits>
 #include <wchar.h>
-#include "Generated/MacroConfig.h"
+#include "MacroConfig.h"
 
 #ifdef SP_PLATFORM_WIN
 	#include <Windows.h>

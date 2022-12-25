@@ -3,7 +3,8 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/Source/SPing"
+                "${workspaceFolder}/Source/SPing",
+                "${workspaceFolder}/build/config/SPing"
             ],
             "defines": [
                 "_DEBUG",

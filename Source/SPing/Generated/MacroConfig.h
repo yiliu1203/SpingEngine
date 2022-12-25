@@ -1,1 +1,1 @@
-/* #undef SP_BUILD_DLL */
+/* #define SP_BUILD_DLL 0 */
