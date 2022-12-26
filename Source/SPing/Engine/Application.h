@@ -2,6 +2,7 @@
 
 #include "SPingPre.h"
 #include "WinWindow.h"
+#include "Engine.h"
 
 namespace SPing 
 {
@@ -16,12 +17,12 @@ protected:
     virtual void SetUp() {};
     virtual void Start() {};
     virtual void Stop() {};
-    void DoFrame();
 
     int exitCode_;
 
 private:
-    WinWindow window;
+    WinWindow window_;
+    Engine engine_;
 
 };
 

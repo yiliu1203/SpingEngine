@@ -6,7 +6,7 @@ namespace SPing
 
 
 Application::Application()
-    :window(800, 600, "Hello World"), exitCode_(0)
+    :window_(800, 600, "Hello World"), exitCode_(0), engine_{}
 {
 }
 
@@ -14,15 +14,12 @@ int Application::Run()
 {
     SetUp();
     Start();
-    while(window.ProcessMessage() != 0) {
-        DoFrame();
+    while(window_.ProcessMessage() != 0) {
+        engine_.RunFrame();
     }
     Stop();
     return 1;
 }
 
-void Application::DoFrame() 
-{    
-}
 
 }

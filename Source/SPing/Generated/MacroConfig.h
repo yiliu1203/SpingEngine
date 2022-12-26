@@ -1,1 +1,0 @@
-/* #define SP_BUILD_DLL 0 */
