@@ -13,6 +13,7 @@
 #include <functional>
 #include <type_traits>
 #include <wchar.h>
+#include <assert.h>
 #include "MacroConfig.h"
 
 #ifdef SP_PLATFORM_WIN
