@@ -11,9 +11,12 @@ namespace SPing {
 		StringHash() noexcept : value_(0)
 		{
         };
-		StringHash(const StringHash& rhs) noexcept = default;
+		StringHash(const StringHash& rhs) noexcept{
+			value_ = rhs.value_;
+			std::cout << "const StrHash& rhs" << std::endl;
+		};
 
-		StringHash(const StringHash&& rhs) noexcept
+		StringHash(StringHash&& rhs) noexcept
 		{
 			value_ = rhs.value_;
 			std::cout << "const StrHash&& rhs" << std::endl;
@@ -47,6 +50,8 @@ namespace SPing {
 		{
 			return (value_ < rhs.value_);
 		}
+
+		friend std::ostream& operator << (std::ostream& out, const StringHash& val);
 
 	private:
 		std::size_t value_;

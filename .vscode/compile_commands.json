@@ -1,8 +1,28 @@
 [
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.01_HelloWorld.pdb", "/Od", "/ISource\\SPing", "/Ibuild\\config\\01_HelloWorld", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\01_HelloWorld\\windows\\x86\\debug\\Source\\Samples\\01_HelloWorld\\HelloWorld.cpp.obj", "Source\\Samples\\01_HelloWorld\\HelloWorld.cpp"],
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.02_Object.pdb", "/Od", "/ISource\\SPing", "/Ibuild\\config\\02_Object", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\02_Object\\windows\\x86\\debug\\Source\\Samples\\01_HelloWorld\\HelloWorld.cpp.obj", "Source\\Samples\\01_HelloWorld\\HelloWorld.cpp"],
   "file": "Source\\Samples\\01_HelloWorld\\HelloWorld.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.02_Object.pdb", "/Od", "/ISource\\SPing", "/Ibuild\\config\\02_Object", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\02_Object\\windows\\x86\\debug\\Source\\Samples\\02_Object\\Main.cpp.obj", "Source\\Samples\\02_Object\\Main.cpp"],
+  "file": "Source\\Samples\\02_Object\\Main.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\SPing.pdb", "/Od", "/ISource\\SPing", "/Ibuild\\config\\SPing", "/DSP_PLATFORM_WIN", "/DSP_BUILD_DLL", "/EHsc", "/Fobuild\\.objs\\SPing\\windows\\x86\\debug\\Source\\SPing\\Core\\Context.cpp.obj", "Source\\SPing\\Core\\Context.cpp"],
+  "file": "Source\\SPing\\Core\\Context.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\SPing.pdb", "/Od", "/ISource\\SPing", "/Ibuild\\config\\SPing", "/DSP_PLATFORM_WIN", "/DSP_BUILD_DLL", "/EHsc", "/Fobuild\\.objs\\SPing\\windows\\x86\\debug\\Source\\SPing\\Core\\Object.cpp.obj", "Source\\SPing\\Core\\Object.cpp"],
+  "file": "Source\\SPing\\Core\\Object.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\SPing.pdb", "/Od", "/ISource\\SPing", "/Ibuild\\config\\SPing", "/DSP_PLATFORM_WIN", "/DSP_BUILD_DLL", "/EHsc", "/Fobuild\\.objs\\SPing\\windows\\x86\\debug\\Source\\SPing\\Core\\StringHash.cpp.obj", "Source\\SPing\\Core\\StringHash.cpp"],
+  "file": "Source\\SPing\\Core\\StringHash.cpp"
 },
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
@@ -18,4 +38,9 @@
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
   "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\SPing.pdb", "/Od", "/ISource\\SPing", "/Ibuild\\config\\SPing", "/DSP_PLATFORM_WIN", "/DSP_BUILD_DLL", "/EHsc", "/Fobuild\\.objs\\SPing\\windows\\x86\\debug\\Source\\SPing\\Engine\\WinWindow.cpp.obj", "Source\\SPing\\Engine\\WinWindow.cpp"],
   "file": "Source\\SPing\\Engine\\WinWindow.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.01_HelloWorld.pdb", "/Od", "/ISource\\SPing", "/Ibuild\\config\\01_HelloWorld", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\01_HelloWorld\\windows\\x86\\debug\\Source\\Samples\\01_HelloWorld\\HelloWorld.cpp.obj", "Source\\Samples\\01_HelloWorld\\HelloWorld.cpp"],
+  "file": "Source\\Samples\\01_HelloWorld\\HelloWorld.cpp"
 }]

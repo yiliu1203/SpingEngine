@@ -9,7 +9,7 @@ namespace SPing {
 	class SP_API TypeInfo
 	{
 	public:
-		TypeInfo(const std::string& typeName, const TypeInfo* baseTypeInfo) : typeName_(typeName), baseTypeInfo_(baseTypeInfo), type_(StringHash(typeName)) {
+		TypeInfo(const std::string& typeName, const TypeInfo* baseTypeInfo) : typeName_(typeName), baseTypeInfo_(baseTypeInfo), type_(typeName) {
 		}
 		~TypeInfo() = default;
 		const std::string& GetTypeName() const { return typeName_; }
