@@ -25,7 +25,7 @@ public:
 
 int main() 
 {
-    std::cout << "test 02_Object" << std::endl;
+    std::cout << "********************test Object**************************************" << std::endl;
     Context* context = new Context();
 
     TestA *a = new TestA(context);

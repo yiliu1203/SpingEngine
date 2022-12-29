@@ -46,11 +46,12 @@ namespace SPing {
 
 	};
 
-	/// <summary>
-	/// 这个结构是弱引用的基础，当还存在弱引用时，弱引用还可以访问计数器
-	/// 计数器对象还没有释放，但是外层的object对象已经释放了，
-	/// </summary>
-	struct SP_API RefCount{
+	/**
+	 * 这个结构没有合并到 RefCounted 中最大的原因还是为了 WeakPtr的实现，
+	 * WeakPtr 会有成员指向 RefCount。Object extend RefCounted, object析构时父类自然也析构了，但是RefCount_不一定跟着析构
+	 * WeakPtr 中也指向了RefCount，增加了弱引用的计数。 弱引用计数为0时才会真正析构 RefCount_
+	*/
+	struct SP_API RefCount {
 		int refs_;
 		int weakRefs_;
 		RefCount(): refs_(0), weakRefs_(0) {};
@@ -107,7 +108,7 @@ namespace SPing {
 		};
 		int WeakRefs() const
 		{
-			return refCount_->weakRefs_;
+			return refCount_->weakRefs_ - 1;
 		};
 
 	private:
