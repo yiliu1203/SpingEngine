@@ -72,6 +72,7 @@ namespace SPing {
 
 		virtual ~RefCounted()
 		{
+			std::cout << "~RefCounted" << std::endl;
 			assert(refCount_->refs_ == 0);
 			assert(refCount_->weakRefs_ >= 1);
 

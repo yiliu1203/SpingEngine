@@ -15,6 +15,7 @@
 #include <wchar.h>
 #include <assert.h>
 #include "MacroConfig.h"
+#include "Core/Utils.h"
 
 #ifdef SP_PLATFORM_WIN
 	#include <Windows.h>

@@ -4,6 +4,24 @@
         "iostream": "cpp",
         "type_traits": "cpp",
         "xstring": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "exception": "cpp",
+        "functional": "cpp",
+        "iterator": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "memory": "cpp",
+        "sstream": "cpp",
+        "tuple": "cpp",
+        "unordered_set": "cpp",
+        "utility": "cpp",
+        "vector": "cpp",
+        "xtree": "cpp",
+        "ios": "cpp",
+        "istream": "cpp",
+        "ostream": "cpp",
+        "streambuf": "cpp",
+        "xhash": "cpp",
+        "xiosbase": "cpp"
     }
 }
