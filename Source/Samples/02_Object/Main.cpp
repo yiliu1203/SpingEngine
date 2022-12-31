@@ -23,6 +23,12 @@ public:
     ~TestB() {std::cout <<"DestroyB"<< std::endl;};
 };
 
+class Test0
+{
+public:
+    explicit Test0(Context* context) { std::cout << "ConstructB" << std::endl;};
+};
+
 
 int main() 
 {
@@ -62,6 +68,11 @@ int main()
         }
         
         std::cout << "Ref rawPtrA: " << shareA.Refs() << std:: endl; 
+
+        //
+        Test0 * rawPtr0 = new Test0(context2);
+        // SharePtr<Test0> t0(rawPtr0);  // 编译报错
+        
 
     }
     

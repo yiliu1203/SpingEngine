@@ -4,7 +4,7 @@
 #include "Object.h"
 namespace SPing {
     // todo 怎么加上约束， 继承 Object的才行？
-template <typename T>
+template <typename T, typename = decltype(T::GetTypeInfoStatic())>
 class SharePtr
 {
 public:
