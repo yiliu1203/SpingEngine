@@ -31,9 +31,23 @@ public:
     explicit Test0(Context* context) { std::cout << "ConstructB" << std::endl;};
 };
 
+class TestDeletage {
+
+public:
+    int Add(int a, int b)
+    {
+        return a + b;
+    }
+};
+
+int Add(int a, int b)
+{
+    return a + b;
+}
+
 
 int main() 
-{
+{ 
     std::cout << "********************test Object**************************************" << std::endl;
     Context* context1 = new Context();
 
@@ -75,13 +89,28 @@ int main()
     }
 
     {
-        using namespace SPing::Math;
         std::cout << "**************************Test Vector Matrix *********************************" << std:: endl;
+        using namespace SPing::Math;
         Vec2 v2_0;
         std::cout << v2_0;
-        Vec2 v2_1{1, 2, 4};  // 这里可以超过 2, 但是 4 被舍弃了
+        Vec2 v2_1{1.5, 2.5};  // 这里可以超过 2, 但是 4 被舍弃了
         std::cout << v2_1;
         std::cout << (v2_1 * 3);
+
+        Vec2d v2d_0{10, 20};
+        std::cout << (v2_1 + v2d_0) << std::endl;
+
+    }
+
+    {
+        std::cout << "**************************Test Delegate *********************************" << std:: endl;
+
+        TestDeletage testDelegate;
+        typedef int (TestDeletage::*CF)(int, int);
+        CF cf = &(TestDeletage::Add);
+        std::cout << "testDelegate.*cf: " << (testDelegate.*cf)(1, 2) << std::endl;
+
+
     }
 
 

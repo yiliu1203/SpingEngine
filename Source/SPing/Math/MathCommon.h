@@ -10,6 +10,7 @@ namespace SPing::Math
     struct enable_if_convert : std::false_type{};
 
     // 偏特化
+    // common_type_t 两个类型中“最大”的类型
     template<typename T, typename U>
     struct enable_if_convert<T, U, std::enable_if_t<std::is_same_v<T, std::common_type_t<T, U>>>> : std::true_type{};
     
