@@ -22,6 +22,9 @@
         "ostream": "cpp",
         "streambuf": "cpp",
         "xhash": "cpp",
-        "xiosbase": "cpp"
+        "xiosbase": "cpp",
+        "array": "cpp",
+        "initializer_list": "cpp",
+        "cassert": "cpp"
     }
 }

@@ -1,6 +1,7 @@
 add_rules("mode.debug", "mode.release")
 add_defines("SP_PLATFORM_WIN")
 set_optimize("none")
+set_languages("clatest", "cxx17")
 
 target("SPing")
     set_kind("static")

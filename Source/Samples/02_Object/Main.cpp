@@ -2,6 +2,8 @@
 #include "Core/Object.h"
 #include "Core/Context.h"
 #include "Core/Ptr.h"
+#include "Math/Vector.h"
+#include "Math/Matrix.h"
 
 using namespace SPing;
 
@@ -45,12 +47,10 @@ int main()
     << b->IsInstanceOf(a->GetType()) << std:: endl 
     << c.IsInstanceOf(b->GetType()) << std::endl;
     std::cout << a->IsInstanceOf(b->GetType());
-    
     delete a;
 
-    std::cout << "**************************Test SharePtr *********************************" << std:: endl;
-
     {
+        std::cout << "**************************Test SharePtr *********************************" << std:: endl;
         Context* context2 = new Context();
         TestA * rawPtrA = new TestA(context2);
         TestB * rawPtrB = new TestB(context2);
@@ -72,9 +72,19 @@ int main()
         //
         Test0 * rawPtr0 = new Test0(context2);
         // SharePtr<Test0> t0(rawPtr0);  // 编译报错
-        
-
     }
+
+    {
+        using namespace SPing::Math;
+        std::cout << "**************************Test Vector Matrix *********************************" << std:: endl;
+        Vec2 v2_0;
+        std::cout << v2_0;
+        Vec2 v2_1{1, 2, 4};  // 这里可以超过 2, 但是 4 被舍弃了
+        std::cout << v2_1;
+        std::cout << (v2_1 * 3);
+    }
+
+
     
 
     
