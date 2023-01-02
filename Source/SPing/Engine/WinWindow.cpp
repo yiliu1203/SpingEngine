@@ -30,7 +30,7 @@ WinWindow::WindowClass::WindowClass()
 	wc.hCursor = nullptr;
 	wc.style = CS_OWNDC;
 	//wc.hIconSm = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_APPLICATION));
-	RegisterClassExA(&wc);
+	RegisterClassEx(&wc);
 }
 
 WinWindow::WindowClass::~WindowClass()
@@ -53,7 +53,7 @@ WinWindow::WinWindow(int width, int height, const char* name)
 		200, 200, wr.right - wr.left, wr.bottom - wr.top, nullptr, nullptr, WindowClass::GetInstance(), this);
 	
 	ShowWindow(hWnd_, SW_SHOWDEFAULT);
-	SetWindowTextA(hWnd_, name);
+	SetWindowText(hWnd_, name);
 }
 
 WinWindow::~WinWindow()
