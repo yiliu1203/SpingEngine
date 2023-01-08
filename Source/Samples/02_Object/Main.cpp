@@ -48,21 +48,23 @@ int Add(int a, int b)
 
 int main() 
 { 
-    std::cout << "********************test Object**************************************" << std::endl;
-    Context* context1 = new Context();
+    {
+        std::cout << "********************test Object**************************************" << std::endl;
+        Context* context1 = new Context();
 
-    TestA *a = new TestA(context1);
-    TestB *b = new TestB(context1);
-    Object &c = *b;
+        TestA *a = new TestA(context1);
+        TestB *b = new TestB(context1);
+        Object &c = *b;
 
-    std::string typeName = a->GetTypeName();
-    std::cout << a->GetTypeName() << std:: endl 
-    << a->GetType() << std::endl 
-    << b->IsInstanceOf(a->GetType()) << std:: endl 
-    << c.IsInstanceOf(b->GetType()) << std::endl;
-    std::cout << a->IsInstanceOf(b->GetType());
-    delete a;
-
+        std::string typeName = a->GetTypeName();
+        std::cout << a->GetTypeName() << std:: endl 
+        << a->GetType() << std::endl 
+        << b->IsInstanceOf(a->GetType()) << std:: endl 
+        << c.IsInstanceOf(b->GetType()) << std::endl;
+        std::cout << a->IsInstanceOf(b->GetType());
+        delete a;
+    }
+    
     {
         std::cout << "**************************Test SharePtr *********************************" << std:: endl;
         Context* context2 = new Context();
@@ -109,8 +111,6 @@ int main()
         typedef int (TestDeletage::*CF)(int, int);
         CF cf = &(TestDeletage::Add);
         std::cout << "testDelegate.*cf: " << (testDelegate.*cf)(1, 2) << std::endl;
-
-
     }
 
 
