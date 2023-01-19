@@ -1,6 +1,5 @@
 #pragma once
 #include "SPingPre.h"
-
 // 将字符串 hash 成 unsigned 类型，方便比较,提高效率。
 // hash 冲突怎么解决 todo
 

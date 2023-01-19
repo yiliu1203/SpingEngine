@@ -33,6 +33,4 @@ public:
     virtual const std::string ToString() const { return GetName();}
 };
 
-
-
 }

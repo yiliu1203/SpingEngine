@@ -5,8 +5,13 @@
 namespace SPing
 {
 
-    class SP_API Context : public RefCount {
-        friend class Object;
-    };
+class SP_API Context : public RefCount {
+friend class Object;
+
+public:
+    void RegSubSystem(Object* object);
+    // void RemoveSubSystem(StringHash)
+};
     
-} // namespace Sping
+}
+// namespace Sping
