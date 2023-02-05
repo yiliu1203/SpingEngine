@@ -43,6 +43,14 @@ target("02_Object")
     add_configfiles("Source/SPing/MacroConfig.h.in")
     add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
 
+
+target("03_RTTI")
+    set_kind("binary")
+    add_files("Source/Samples/03_RTTI/*.cpp")
+    add_files("Source/Samples/03_RTTI/**/*.cpp")
+    add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
+
+
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
 --
