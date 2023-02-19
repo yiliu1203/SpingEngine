@@ -1,6 +1,6 @@
 #pragma once
 #include <typeindex>
-#include "TypeErasure/Typeid.hpp"
+#include "Detail/Typeid.hpp"
 
 
 #define RTTI_TYPE(...) \

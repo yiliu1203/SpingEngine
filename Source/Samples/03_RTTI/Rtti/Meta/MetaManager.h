@@ -1,6 +1,6 @@
 #pragma once
 #include <map>
-#include "../TypeErasure/Typeid.hpp"
+#include "../Detail/Typeid.hpp"
 #include "../RttiMacro.h"
 
 namespace SPing::RTTI

@@ -1,5 +1,6 @@
 #pragma once
-#include "../TypeErasure/Typeid.hpp"
+#include "MetaManager.h"
+#include "../Detail/Typeid.hpp"
 
 namespace SPing::RTTI
 {
@@ -23,7 +24,12 @@ class Meta
     public:
         friend class MetaManager;
         template <typename T>
-        static MetaBuilder<T> Declare();
+        static MetaBuilder<T> Declare()
+        {
+            using TypeDecl = StaticTypeDecl<T>;
+            Meta& meta = MetaManager::Instance().AddMeta(TypeDecl::id(), TypeDecl::name());
+            return MetaBuilder<T>(meta);
+        }
 };
 
 

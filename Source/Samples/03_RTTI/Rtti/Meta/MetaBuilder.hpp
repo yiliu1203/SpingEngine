@@ -9,7 +9,9 @@ class MetaBuilder
 {
 
 public:
-    MetaBuilder(Meta& meta);
+    MetaBuilder(Meta& meta){
+        
+    }
 
 private:
     Meta* meta_;

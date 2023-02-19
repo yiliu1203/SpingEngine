@@ -51,6 +51,12 @@ target("03_RTTI")
     add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
 
 
+target("04_RTTI_Simple")
+    set_kind("binary")
+    add_files("Source/Samples/04_RTTI_Simple/*.cpp")
+    add_files("Source/Samples/04_RTTI_Simple/**/*.cpp")
+    add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
+
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
 --
