@@ -11,7 +11,7 @@
 class Foo
 {
     public:
-        std::string anme;
+        std::string name;
 
         void PassByValue(std:: string s) const
         {
@@ -48,7 +48,8 @@ class Foo
 
 int main()
 {
-    reflect::AddClass<Foo>("Foo");
+    reflect::AddClass<Foo>("Foo")
+    .AddMemberVar("name", &Foo::name);
     std::cout << "Hello World" << std::endl;
 
 }
