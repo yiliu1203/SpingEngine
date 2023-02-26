@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include <any>
 #include <functional>
 #include <iostream>
@@ -9,6 +8,10 @@
 #include <tuple>
 #include <unordered_map>
 #include <vector>
+#include <type_traits>
+#include <optional>
+#include <format>
+#include <string_view>
 
 namespace reflect
 {
@@ -16,12 +19,28 @@ namespace reflect
 namespace detail
 {
 
+
 class TypeDescriptor;
+
+
+class Registry {
+public:
+    static Registry& instance() {
+        static Registry inst;
+        return inst;
+    };
+
+    TypeDescriptor* Find(const std::string& name);
+    void Register(std::unique_ptr<TypeDescriptor> desc);
+
+private:
+    std::unordered_map<std::string, std::unique_ptr<TypeDescriptor>> type_descs_;
+};
+
 
 /**
  * MemberVariable 本身只是存储了一个名字，通过模板元的技术，生成匹配各种 
 */
-
 class MemberVariable
 {
 public:
@@ -54,6 +73,11 @@ public:
         setter_(&c, val);
     }
 
+    const std::string& name() const
+    {
+        return name_;
+    }
+
 
 private:
     friend class RawTypeDescriptorBuilder;
@@ -72,20 +96,35 @@ public:
         fn_ = [func](std::any any_obj) ->std::any
         {
             using tuple_t = std::tuple<C&, Args...>;
-            auto *tp_ptr = std::any_cast<tuple_t*>(obj_args)
-            return std::apply(func, *tp_ptr);
-        }
+            auto *tp_ptr = std::any_cast<tuple_t*>(any_obj);
+            if constexpr (std::is_void_v<R>) {
+                std::apply(func, *tp_ptr);
+                return {};
+            }
+            else {
+                return std::apply(func, *tp_ptr);
+            }
+        };
         is_const_ = false;
     }
 
     template<typename C, typename R, typename... Args>
     explicit MemberFunction(R (C::*func)(Args...) const) {
-        fn_ = [func](std::any any_obj) ->std::any
+        fn_ = [func](std::any any_obj) -> std::any
         {
             using tuple_t = std::tuple<C&, Args...>;
-            auto *tp_ptr = std::any_cast<tuple_t*>(obj_args)
-            return std::apply(func, *tp_ptr);
-        }
+            auto *tp_ptr = std::any_cast<tuple_t*>(any_obj);
+            // 【注意这里一定要加 constexpr, 否则这里 一定为false, 看起来就是用于进入else分支】
+            // 而且要加上（）： if constexpr (...)
+            if constexpr (std::is_void_v<R>) {
+                std::apply(func, *tp_ptr);
+                return {};
+            }
+            else {
+                return std::any{std::apply(func, *tp_ptr)};
+            }
+            
+        };
         is_const_ = true;
     }
 
@@ -104,12 +143,22 @@ public:
         }
     }
 
+    const std::string& name() const
+    {
+        return name_;
+    }
+    bool is_const() const
+    {
+        return is_const_;
+    }
+
 private:
 
     friend class RawTypeDescriptorBuilder;
 
     std::string name_;
     bool is_const_;
+    // 【这里没有模板生成对应的类型，就得用给一个统一个类型了】
     std::function<std::any(std::any)> fn_{nullptr};
 
 };
@@ -118,7 +167,16 @@ class TypeDescriptor
 {
 public:
 
+    TypeDescriptor() = default;
+    TypeDescriptor(const TypeDescriptor&) = default;
+    std::string& name() {return name_;}
 
+    ~TypeDescriptor(){
+        member_vars_.clear();
+        member_funcs_.clear();
+    }
+
+    friend std::ostream& operator << (std::ostream& cout, const TypeDescriptor& typeDescriptor);
 
 private:
 
@@ -129,10 +187,6 @@ private:
 };
 
 
-
-
-
-
 class RawTypeDescriptorBuilder
 {
 public:
@@ -140,6 +194,13 @@ public:
         desc_ = std::make_unique<TypeDescriptor>();
         desc_->name_ = name;
     }
+
+    // 【移动构造函数参数不要加const】
+    RawTypeDescriptorBuilder(RawTypeDescriptorBuilder&& right) = default;
+    RawTypeDescriptorBuilder& operator= (const RawTypeDescriptorBuilder&) = delete;
+    RawTypeDescriptorBuilder& operator= (RawTypeDescriptorBuilder&&) = default;
+
+
 
     template <typename T, typename C>
     void AddMemberVar(const std::string& name, T C::*var) 
@@ -150,13 +211,21 @@ public:
         desc_->member_vars_.push_back(std::move(mv));
     }
 
-    template <typename T, typename FUNC>
+    template <typename FUNC>
     void AddMemberFunc(const std::string& name, FUNC func)
     {
-
+        MemberFunction mf{func};
+        mf.name_ = name;
+        desc_->member_funcs_.push_back(std::move(mf));
     }
 
-    // ~RawTypeDescriptorBuilder();
+    /** 
+     * 这里定义了析构之后 默认的构造函数似乎就不再生成了，编译报错了，所以要手动定义下几个构造函数
+     * 【特殊的】这里禁用了赋值构造和赋值运算符，主要是 unique_ptr 结构是禁用拷贝的，所以用移动构造。当然也不符合这里的设计思想
+    */
+    ~RawTypeDescriptorBuilder(){
+        Registry::instance().Register(std::move(desc_));
+    }
 
 
 private:
@@ -166,12 +235,16 @@ private:
 
 }   // detail
 
+
 template <typename T>
 class TypeDescriptorBuilder
 {
 public:
     explicit TypeDescriptorBuilder(const std::string& name): raw_builder_{name}
     {
+    }
+
+    TypeDescriptorBuilder(TypeDescriptorBuilder&& builder): raw_builder_(std::move(builder.raw_builder_)){
     }
 
     template <typename V, typename C>
@@ -196,7 +269,7 @@ template <typename T>
 TypeDescriptorBuilder<T> AddClass(const std::string& name)
 {
     TypeDescriptorBuilder<T> builder{name};
-    return builder;
+    return std::move(builder);
 }
 
 
