@@ -112,9 +112,10 @@ public:
     explicit MemberFunction(R (C::*func)(Args...) const) {
         fn_ = [func](std::any any_obj) -> std::any
         {
-            using tuple_t = std::tuple<C&, Args...>;
+            /* 注意这里还需要加个 const,  要不然运行时转换报错*/
+            using tuple_t = std::tuple<const C&, Args...>;
             auto *tp_ptr = std::any_cast<tuple_t*>(any_obj);
-            // 【注意这里一定要加 constexpr, 否则这里 一定为false, 看起来就是用于进入else分支】
+            // 【注意这里一定要加 constexpr, 否则这里 一定为false】
             // 而且要加上（）： if constexpr (...)
             if constexpr (std::is_void_v<R>) {
                 std::apply(func, *tp_ptr);
@@ -221,7 +222,7 @@ public:
 
     /** 
      * 这里定义了析构之后 默认的构造函数似乎就不再生成了，编译报错了，所以要手动定义下几个构造函数
-     * 【特殊的】这里禁用了赋值构造和赋值运算符，主要是 unique_ptr 结构是禁用拷贝的，所以用移动构造。当然也不符合这里的设计思想
+     * 【特殊的】这里禁用了赋值构造和赋值运算符，主要是 unique_ptr 结构是禁用拷贝的，所以用移动构造。当然更符合这里的设计思想
     */
     ~RawTypeDescriptorBuilder(){
         Registry::instance().Register(std::move(desc_));
