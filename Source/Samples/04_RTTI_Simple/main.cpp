@@ -48,6 +48,16 @@ class Foo
 
 };
 
+void PassByValue(std:: string s)
+{
+    std::cout << "FOO::PassByValue (" << s << ")" << std::endl;
+}
+
+void PassByRef(const std:: string& s)
+{
+    std::cout << "FOO::PassByValue ( const" << s << ")" << std::endl;
+}
+
 
 // reflect::AddClass<Foo>("Foo")
 //         .AddMemberVar("name", &Foo::name)
@@ -92,6 +102,31 @@ int main()
         int tmpval = 5;
         const int& tmp = tmpval;
         reflect::detail::Value v{tmp};
+        // bool test = typeid(std::add_const_t<int*>) == 
+        using const_int = std::add_const_t<int>;
+        std::cout << (typeid(const_int).hash_code() == typeid(int).hash_code()) << std::endl;
+        std::cout << "is_same:" << std::is_same<const int, std::add_const_t<int>>::value << std::endl;
+        std::cout << "is_same*" << std::is_same<const int *, std::add_const_t<int*>>::value << std::endl;
+        std::cout << "const_int:" << std::is_const_v<const_int> << std::is_const_v<int> << std::endl;
+        std::cout << typeid(const int).name() << std::endl;
+        std::cout << typeid(const int *).name() << std::endl;
         std::cout << v.IsConst() << v.RefType() << std::endl;
+        std::cout << v.To<const int&>() << std::endl;
+
+        tmpval = 55;
+        int& tmp2 = tmpval;
+        reflect::detail::Value v2{tmp2};
+        std::cout << v.IsConst() << v.RefType() << std::endl;
+        std::cout << v.To<const int>() << std::endl;
+
     }
+
+    {
+        std::cout << std::endl << "-------------------Test FuncWrap-------------------------" << std::endl;
+        reflect::detail::FuncWrap func_value{PassByValue};
+        func_value.Invoke(std::string{"Hello"});
+        reflect::detail::FuncWrap func_ref{PassByRef};
+        func_value.Invoke(std::string{"Hello"});
+    }
+
 }
