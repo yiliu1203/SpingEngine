@@ -24,6 +24,7 @@ std::cout << "is_same*" << std::is_same<const int *, std::add_const_t<int*>>::va
 最大的却别是 std::apply 接受元组作为参数，而std::invoke 接受参数包
 
 ```c++
+// 注意 完美转发的std::forward
 namespace detail {
 template <class F, class Tuple, std::size_t... I>
 constexpr decltype(auto) apply_impl(F&& f, Tuple&& t, std::index_sequence<I...>)
@@ -44,4 +45,30 @@ constexpr decltype(auto) apply(F&& f, Tuple&& t)
 
 ## std::make_index_sequence 
 
-创建一个1-n序列的参数包，用std::index_sequence类型来接受
+创建一个1-n序列的参数包，用std::index_sequence类型来接收
+
+## 利用 void_t 判断是否有特定成员数据或者成员方法
+
+```c++
+template <typename T>
+/** void_t 相当于对任何类型都满足推导，会优先用特化版本*/
+class has_member<T, std::void_t<decltype(T::member)>> : public std::true_type {};
+
+struct test_has_member
+{
+    int member;
+};
+struct test_no_member
+{
+};
+
+/**利用void_t 和 declval 判断类型是否有特定方法*/
+template <typename T, typename=void>
+class is_smart_ptr: public std::false_type{};
+
+template <typename T>
+class is_smart_ptr<T, std::void_t<decltype(std::declval<T>().operator->()), decltype(std::declval<T>().get())>>
+:public std::true_type{};
+
+```
+
