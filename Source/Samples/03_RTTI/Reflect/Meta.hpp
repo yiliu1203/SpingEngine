@@ -1,8 +1,8 @@
 #pragma once
 #include "MetaManager.h"
-#include "../Detail/Typeid.hpp"
+#include "Typeid.hpp"
 
-namespace SPing::RTTI
+namespace reflect
 {
 
 template <typename T> class MetaBuilder;

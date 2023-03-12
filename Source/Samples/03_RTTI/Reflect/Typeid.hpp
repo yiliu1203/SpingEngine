@@ -3,7 +3,7 @@
 #include <type_traits>
 #include <ostream>
 
-namespace SPing::RTTI
+namespace reflect
 {
 using TypeId = std::type_index;
 

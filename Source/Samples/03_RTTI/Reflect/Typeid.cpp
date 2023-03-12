@@ -1,7 +1,7 @@
 #pragma once
 #include "Typeid.hpp"
 
-namespace SPing::RTTI
+namespace reflect
 {
 
 

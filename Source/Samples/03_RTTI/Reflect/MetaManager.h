@@ -1,9 +1,9 @@
 #pragma once
 #include <map>
-#include "../Detail/Typeid.hpp"
-#include "../RttiMacro.h"
+#include "Typeid.hpp"
+#include "Macro.h"
 
-namespace SPing::RTTI
+namespace reflect
 {
 
 class Meta;

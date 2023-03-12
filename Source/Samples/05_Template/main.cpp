@@ -35,6 +35,21 @@ class is_smart_ptr<T, std::void_t<decltype(std::declval<T>().operator->()), decl
 :public std::true_type{};
 
 
+/** 利用继承来实现多态 std::is_member_funcon_pointer 可能的实现*/
+template <typename T>
+struct is_member_function_pointer_helper : std::false_type {};
+
+// 特化版本
+template<typename T, typename U>
+struct is_member_function_pointer_helper <T U::*> : std::is_function<T> {};
+// struct is_member_function_pointer_helper <T(U::*)> : std::is_function<T> {};  成员函数？注意和上面的区别
+
+template <typename T>
+struct is_member_function_pointer : is_member_function_pointer_helper<typename std::remove_cv_t<T>> {};
+
+//----------------------------------------------------------------
+
+
 int main() {
     std::cout << "Hello Template" << std::endl;
     {

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Rtti/Rtti.h"
+#include "Reflect/Reflect.h"
 
 class Foo {
 public:
@@ -13,10 +13,10 @@ class Shape {
 
 int main()
 {
-    using namespace SPing::RTTI;
+    using namespace reflect;
     std::cout << "Hello World" << std::endl;
 
-    std::cout << "typeid: Foo" << typeid(Foo).name() << std::endl;
+    std::cout << "typeid: Foo " << typeid(Foo).name() << std::endl;
 
     std::cout << StaticTypeDecl<Foo>::name() << " " << StaticTypeDecl<Foo>::id() << std::endl;
 

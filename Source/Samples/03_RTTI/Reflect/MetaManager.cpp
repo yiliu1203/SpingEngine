@@ -1,7 +1,7 @@
 #include "MetaManager.h"
-#include "../Meta/Meta.hpp"
+#include "Meta.hpp"
 
-namespace SPing::RTTI
+namespace reflect
 {
 
 Meta& MetaManager::AddMeta(const TypeId& id, const std::string& name)

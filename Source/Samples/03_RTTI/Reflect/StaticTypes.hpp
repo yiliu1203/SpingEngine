@@ -1,10 +1,10 @@
 #pragma once
 #include <typeindex>
-#include "Detail/Typeid.hpp"
+#include "Typeid.hpp"
 
 
 #define RTTI_TYPE(...) \
-    namespace SPing::RTTI {\
+    namespace reflect {\
     template<> struct StaticTypeDecl<__VA_ARGS__> \
     { \
     static const TypeId id() { return std::type_index(typeid(__VA_ARGS__));} \
