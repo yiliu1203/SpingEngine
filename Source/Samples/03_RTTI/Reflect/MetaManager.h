@@ -8,7 +8,7 @@ namespace reflect
 
 class Meta;
 
-class MetaManager
+class SP_API MetaManager
 {
 public:
     static MetaManager& Instance() {

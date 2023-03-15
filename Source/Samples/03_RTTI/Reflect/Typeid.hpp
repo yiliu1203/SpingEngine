@@ -2,6 +2,7 @@
 #include <typeindex>
 #include <type_traits>
 #include <ostream>
+#include "Macro.h"
 
 namespace reflect
 {
@@ -9,8 +10,6 @@ using TypeId = std::type_index;
 
 template <typename T>
 inline TypeId CalcTypeId() {return TypeId(typeid(T));}
-
-std::ostream& operator<<( std::ostream & os, TypeId typeId);
 
 
 template <typename T>
@@ -30,5 +29,25 @@ struct StaticTypeDecl
     }
 
 };
+
+enum class ValueKind
+{
+    None,
+    Boolean,
+    Integer,
+    Real,
+    String,
+    Enum,
+    Array,
+};
+
+enum class ReferenceKind {
+    None,
+    Instance,
+    Pointer,
+    Reference,
+};
+
+
 
 }

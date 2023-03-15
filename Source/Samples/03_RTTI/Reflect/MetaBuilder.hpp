@@ -1,11 +1,12 @@
-#include "Meta.hpp"
+#include "Meta.h"
+#include "Macro.h"
 
 namespace reflect
 {
 
 
 template <typename T>
-class MetaBuilder
+class SP_API MetaBuilder
 {
 
 public:

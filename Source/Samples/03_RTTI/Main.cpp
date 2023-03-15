@@ -22,7 +22,4 @@ int main()
 
     Meta::Declare<Foo>();
     
-
-    
-
 }
