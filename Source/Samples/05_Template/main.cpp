@@ -57,7 +57,7 @@ struct is_member_object_pointer : std::false_type {};
 
 template<typename T, typename U>        // 1. 部分专用化不能带有默认模板参数, 2. 【特别注意】T 和 T(U::*) 的区别, 一个是普通类型，一个带成员的类型。函数成员时也同理
 struct is_member_object_pointer <T(U::*), typename std::enable_if_t<std::is_member_pointer<T U::*>::value && !is_member_function_pointer<T U::*>::value >> : std::true_type {};  
-
+// 体会下上面 std::enable_if 在模板特化 和 继承上的用法
 
 class TestMemFunc
 {
@@ -67,6 +67,7 @@ public:
     static int f2() {return 1;}
     static constexpr int a2 = 1;
 };
+
 
 
 //----------------------------------------------------------------

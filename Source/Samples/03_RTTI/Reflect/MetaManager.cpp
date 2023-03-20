@@ -11,8 +11,8 @@ Meta& MetaManager::AddMeta(const TypeId& id, const std::string& name)
         }
 
         Meta* meta = new Meta(id, name);
-        metaMapIds_.insert({id.hash_code(), meta});
-        metaMapNames_.insert({name, meta});
+        meta_ids_.insert({id.hash_code(), meta});
+        meta_names_.insert({name, meta});
 }
 
 

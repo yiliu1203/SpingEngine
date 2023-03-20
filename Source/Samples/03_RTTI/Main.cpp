@@ -20,6 +20,6 @@ int main()
 
     std::cout << StaticTypeDecl<Foo>::name() << " " << StaticTypeDecl<Foo>::id() << std::endl;
 
-    Meta::Declare<Foo>();
+    Meta::Declare<Foo>().property("x", &Foo::x);
     
 }

@@ -20,23 +20,23 @@ public:
 
     const Meta* Get(const TypeId& id) const
     {
-        auto iter = metaMapIds_.find(id.hash_code());
-        return iter == metaMapIds_.end() ? nullptr : iter->second;
+        auto iter = meta_ids_.find(id.hash_code());
+        return iter == meta_ids_.end() ? nullptr : iter->second;
     }
 
 
     bool IsClassExists(const TypeId& id) noexcept
     {
-        return !(metaMapIds_.find(id.hash_code()) == metaMapIds_.end());
+        return !(meta_ids_.find(id.hash_code()) == meta_ids_.end());
     }
 
     bool IsClassExists(const std::string& name) {
-        return !(metaMapNames_.find(name) == metaMapNames_.end());
+        return !(meta_names_.find(name) == meta_names_.end());
     }
 
 private:
-    std::map<std::string, Meta*> metaMapNames_;
-    std::map<std::size_t, Meta*> metaMapIds_;
+    std::map<std::string, Meta*> meta_names_;
+    std::map<std::size_t, Meta*> meta_ids_;
 };
 
 }
