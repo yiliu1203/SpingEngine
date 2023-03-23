@@ -45,7 +45,23 @@ constexpr decltype(auto) apply(F&& f, Tuple&& t)
 
 ## std::make_index_sequence 
 
-创建一个1-n序列的参数包，用std::index_sequence类型来接收
+创建一个1-n序列的参数包，用std::index_sequence类型来接收，注意index_sequence 的使用
+
+```c++
+template <typename... A>
+void OUT(A... args) {
+    auto a = std::forward_as_tuple(args...);
+    OUT(a, std::make_index_sequence<sizeof... (A)>{});
+}
+
+// std::index_sequence 和 std::make_index_sequence 配合使用，拿到编译期的size_t类型的一串常量模板参数包。
+template<typename... A, size_t ...N>
+void OUT(std::tuple<A...>& a, std::index_sequence<N...>)
+{
+    // 这里本质是利用模板实例化的过程，也需要用这个特征才能在生成 实例化 std::get
+    std::initializer_list<int> tmp = { (std::cout << std::get<N>(a) << " ",0)... };
+}
+```
 
 ## 利用 void_t 判断是否有特定成员数据或者成员方法
 

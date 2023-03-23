@@ -69,5 +69,8 @@
         "xlocmes": "cpp",
         "xlocmon": "cpp",
         "xloctime": "cpp"
-    }
+    },
+    "editor.formatOnSave": true,
+    "clang-format.executable": "D:\\Program Files\\LLVM\\bin\\clang-format.exe",
+    "clang-format.style": "file",
 }

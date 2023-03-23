@@ -37,6 +37,7 @@ void OUT(A... args) {
 template<typename... A, size_t ...N>
 void OUT(std::tuple<A...>& a, std::index_sequence<N...>)
 {
+    // 这里本质是利用模板实例化的过程，也需要用这个特征才能在生成 实例化 std::get
     std::initializer_list<int> tmp = { (std::cout << std::get<N>(a) << " ",0)... };
 }
 
@@ -49,17 +50,18 @@ void OUT(std::tuple<A...>& a, std::index_sequence<N...>)
 
 void test1() {
     ERROR("tttttttttttttttttttttttt","asdf");
+    ERROR2("ADSFAD");
 }
 
 int main() {
     using namespace std;
     {
         cout << "----------------Test Debug Macro--------------" << endl;
-        // test1();
+        test1();
         // ERROR2("ADSFAD");
         // std::tuple<int, int> testTuple{1, 2};
         // std::get<0>(testTuple);     // std::get<x> 需要编译期常量
-        OUT("asdfa", 1, "asdf");
+        // OUT("asdfa", 1, "asdf");
 
     }
     return 0;
