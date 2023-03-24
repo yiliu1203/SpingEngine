@@ -37,6 +37,13 @@ private:
         throw exception;                                                                          \
     }
 
+#define ASSERT(condition, ...)      \
+    {                               \
+        if (!(condition)) {         \
+            RTTI_ERROR(__VA_ARGS__) \
+        }                           \
+    }
+
 // #define RTTI_ERROR(...)
 #ifndef SP_API
 #    define SP_API

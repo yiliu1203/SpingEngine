@@ -1,15 +1,17 @@
-#include <iostream>
 #include "Reflect/Reflect.h"
+#include <iostream>
 
-class Foo {
+
+class Foo
+{
 public:
     int x;
     int y;
 };
 RTTI_TYPE(Foo);
 
-class Shape {
-};
+class Shape
+{};
 
 int main()
 {
@@ -21,5 +23,5 @@ int main()
     std::cout << StaticTypeDecl<Foo>::name() << " " << StaticTypeDecl<Foo>::id() << std::endl;
 
     Meta::Declare<Foo>().property("x", &Foo::x);
-    
+    ASSERT(1);
 }

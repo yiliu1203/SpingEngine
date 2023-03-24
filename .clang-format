@@ -72,7 +72,7 @@ AlwaysBreakAfterReturnType: None
 AlwaysBreakBeforeMultilineStrings: false
 
 # 总是在template声明后换行
-AlwaysBreakTemplateDeclarations: false
+AlwaysBreakTemplateDeclarations: true
 
 # false表示函数实参要么都在同一行，要么都各自一行
 BinPackArguments: false
@@ -221,7 +221,7 @@ ObjCSpaceBeforeProtocolList: true
 PenaltyBreakBeforeFirstCallParameter: 2
 
 # 在一个注释中引入换行的penalty
-PenaltyBreakComment: 300
+PenaltyBreakComment: 500
 
 # 第一次在<<前换行的penalty
 PenaltyBreakFirstLessLess:  120
@@ -242,7 +242,7 @@ PenaltyReturnTypeOnItsOwnLine: 120
 PointerAlignment: Left
 
 # 允许重新排版注释
-ReflowComments: true
+ReflowComments: false
 
 # 允许排序#include
 SortIncludes: true
@@ -257,7 +257,7 @@ SpaceAfterCStyleCast: false
 SpaceAfterLogicalNot: false
 
 # 在 template 关键字后插入一个空格
-SpaceAfterTemplateKeyword: false
+SpaceAfterTemplateKeyword: true
 
 # 定义在什么情况下在指针限定符之前或之后放置空格
 # SpaceAroundPointerQualifiers: Before
