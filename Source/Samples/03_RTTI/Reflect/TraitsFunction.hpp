@@ -1,13 +1,15 @@
 #pragma once
-#include "ObjectTraits.hpp"
+#include "TraitsObject.hpp"
 
 
 namespace reflect {
 namespace detail {
 
-template<typename C> struct MemberTraits;
+template <typename C>
+struct MemberTraits;
 
-template<typename C, typename T> struct MemberTraits<T(C::*)>
+template <typename C, typename T>
+struct MemberTraits<T(C::*)>
 {
     using BoundType = T(C::*);
     // typedef T(C::*BoundType);
@@ -30,10 +32,12 @@ template<typename C, typename T> struct MemberTraits<T(C::*)>
     };
 };
 
-template<typename T> struct MethodDetail
+template <typename T>
+struct MethodDetail
 {};
 
-template<typename R, typename C, typename... A> struct MethodDetail<R (C::*)(A...)>
+template <typename R, typename C, typename... A>
+struct MethodDetail<R (C::*)(A...)>
 {
     using ClassType               = C;
     using ParamType               = std::tuple<A...>;
@@ -44,7 +48,8 @@ template<typename R, typename C, typename... A> struct MethodDetail<R (C::*)(A..
 };
 
 
-template<typename R, typename C, typename... A> struct MethodDetail<R (C::*)(A...) const>
+template <typename R, typename C, typename... A>
+struct MethodDetail<R (C::*)(A...) const>
 {
     using ClassType               = const C;
     using ParamType               = std::tuple<A...>;
@@ -55,9 +60,10 @@ template<typename R, typename C, typename... A> struct MethodDetail<R (C::*)(A..
 };
 
 
-template<typename C, typename = void> struct FunctionTraits;
+template <typename C, typename = void>
+struct FunctionTraits;
 
-template<typename T>
+template <typename T>
 struct FunctionTraits<
     T, typename std::is_member_function_pointer<
            T>::type>   // 成员函数匹配，注意和 数据成员的区别, 这里也可以用 std::enable_if 来实现
