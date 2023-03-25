@@ -2,6 +2,7 @@
 #include "Macro.h"
 #include "Meta.h"
 #include "Property.h"
+#include "PropertyFactory.hpp"
 
 namespace reflect {
 
@@ -13,14 +14,18 @@ public:
         : meta_(&meta)
     {}
 
-    template <typename F>
-    MetaBuilder& property(const std::string& name, F accesser)
+    template <typename A>
+    MetaBuilder& property(const std::string& name, A accessor)
     {
-        return addProperty()
+        return addProperty(detail::PropertyFactory1<T, A>::create(name, accessor));
     }
 
 private:
-    MetaBuilder& addProperty(Property* property) { return *this; }
+    MetaBuilder& addProperty(Property* property)
+    {
+        meta_->addProperty(property);
+        return *this;
+    }
 
 private:
     Meta* meta_;

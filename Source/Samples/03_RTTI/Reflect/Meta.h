@@ -12,7 +12,8 @@
 
 namespace reflect {
 
-template<typename T> class MetaBuilder;
+template <typename T>
+class MetaBuilder;
 class Property;
 class Function;
 
@@ -22,7 +23,8 @@ class SP_API Meta
 public:
     using PropertyPtr = std::shared_ptr<Property>;
     friend class MetaManager;
-    template<typename T> static MetaBuilder<T> Declare()
+    template <typename T>
+    static MetaBuilder<T> Declare()
     {
         using TypeDecl = StaticTypeDecl<T>;   // 实例化一个 Type类型，只有id和name
         Meta& meta     = MetaManager::Instance().AddMeta(TypeDecl::id(), TypeDecl::name());
@@ -32,17 +34,19 @@ public:
     const TypeId&     id() { return this->id_; }
     const std::string name() { return this->name_; }
 
-    const PropertyPtr getProprity(const std::string& name)
+    const PropertyPtr getProprity(const std::string& name) const
     {
-        for (auto item : properties_) {
-            if (name.compare(item->name())) {
-                return item;
-            }
-        }
+        // for (auto& item : properties_) {
+        //     if (name.compare(item->name())) {
+        //         return item;
+        //     }
+        // }
         return nullptr;
     }
 
 private:
+    template <typename T>
+    friend class MetaBuilder;
     struct BaseInfo
     {
         const Meta* base;
@@ -52,13 +56,19 @@ private:
     Meta(const TypeId& id, const std::string& name)
         : id_{id}
         , name_{name}
+        , base_list_{0}
+        , properties_{0}
+
     {}
 
     bool addProperty(Property* property)
     {
-        if (getProprity(property->name())) {
-            RTTI_ERROR("Add Repeat Proprity ")
-        }
+        // if (getProprity(property->name())) {
+        //     RTTI_ERROR("Add Repeat Proprity ")
+        // }
+        ASSERT(getProprity(property->name()) == nullptr, "Add Repeat Proprity");
+
+        return true;
     }
 
 

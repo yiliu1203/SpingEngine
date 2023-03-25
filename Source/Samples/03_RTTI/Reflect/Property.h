@@ -17,13 +17,14 @@ public:
     void set(void* obj, const Value& val) const { setValue(obj, val); }
 
 protected:
-    template<typename T> friend class ClassBuilder;
+    template <typename T>
+    friend class ClassBuilder;
     Property(const std::string& name, ValueKind kind)
         : name_(name)
         , value_kind_(kind)
     {}
-    virtual bool isReadAble() const;
-    virtual bool isWriteAble() const;
+    virtual bool isReadAble() const  = 0;
+    virtual bool isWriteAble() const = 0;
 
     virtual Value getValue(void* obj) const                   = 0;
     virtual void  setValue(void* obj, const Value& val) const = 0;

@@ -1,17 +1,18 @@
 #pragma once
-#include <map>
-#include "Typeid.hpp"
 #include "Macro.h"
+#include "Typeid.hpp"
+#include <map>
 
-namespace reflect
-{
+
+namespace reflect {
 
 class Meta;
 
 class SP_API MetaManager
 {
 public:
-    static MetaManager& Instance() {
+    static MetaManager& Instance()
+    {
         static MetaManager mm;
         return mm;
     }
@@ -24,19 +25,26 @@ public:
         return iter == meta_ids_.end() ? nullptr : iter->second;
     }
 
-
-    bool IsClassExists(const TypeId& id) noexcept
+    const Meta* Get(const std::string& name)
     {
-        return !(meta_ids_.find(id.hash_code()) == meta_ids_.end());
+        auto iter = meta_names_.find(name);
+        return iter == meta_names_.end() ? nullptr : iter->second;
     }
 
-    bool IsClassExists(const std::string& name) {
-        return !(meta_names_.find(name) == meta_names_.end());
+    template <typename T>
+    const Meta* Get()
+    {
+        return Get(StaticTypeDecl<T>::id());
     }
+
+
+    bool IsClassExists(const TypeId& id) noexcept { return !(meta_ids_.find(id.hash_code()) == meta_ids_.end()); }
+
+    bool IsClassExists(const std::string& name) { return !(meta_names_.find(name) == meta_names_.end()); }
 
 private:
     std::map<std::string, Meta*> meta_names_;
     std::map<std::size_t, Meta*> meta_ids_;
 };
 
-}
+}   // namespace reflect

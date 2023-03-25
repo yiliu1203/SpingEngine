@@ -1,16 +1,16 @@
 #pragma once
+#include "Macro.h"
 #include <any>
 #include <array>
+#include <cassert>
 #include <functional>
 #include <iostream>
 #include <tuple>
 #include <type_traits>
 #include <utility>
-#include <cassert>
-#include "Macro.h"
 
-namespace reflect
-{
+
+namespace reflect {
 
 enum class ERefType
 {
@@ -19,35 +19,42 @@ enum class ERefType
     RightRef,
 };
 
-namespace trait 
-{
-    
-    template <typename T>
-    struct RefTrait : public std::integral_constant<ERefType, ERefType::NoneRef>{};
+namespace trait {
 
-    template <typename T>
-    struct RefTrait<T&> : public std::integral_constant< ERefType, ERefType::LeftRef>{};
+template <typename T>
+struct RefTrait : public std::integral_constant<ERefType, ERefType::NoneRef>
+{};
 
-    template <typename T>
-    struct RefTrait<T&&> : public std::integral_constant< ERefType, ERefType::RightRef>{};
-    
+template <typename T>
+struct RefTrait<T&> : public std::integral_constant<ERefType, ERefType::LeftRef>
+{};
 
-    template <typename T>
-    struct IsConst : public std::false_type {};
+template <typename T>
+struct RefTrait<T&&> : public std::integral_constant<ERefType, ERefType::RightRef>
+{};
 
-    template <typename T>
-    struct IsConst<T&> : public std::false_type {};
 
-    template <typename T>
-    struct IsConst<T*> : public std::false_type {};
+template <typename T>
+struct IsConst : public std::false_type
+{};
 
-    template <typename T>
-    struct IsConst<const T*> : public std::true_type {};
+template <typename T>
+struct IsConst<T&> : public std::false_type
+{};
 
-    template <typename T>
-    struct IsConst<const T&> : public std::true_type {};
+template <typename T>
+struct IsConst<T*> : public std::false_type
+{};
 
-}
+template <typename T>
+struct IsConst<const T*> : public std::true_type
+{};
+
+template <typename T>
+struct IsConst<const T&> : public std::true_type
+{};
+
+}   // namespace trait
 
 
 /**对 一个Param的包装，完美转发， 区分值类型，引用类型，左值引用还是右值引用， 是否const。
@@ -57,7 +64,6 @@ class SP_API Value
 {
 
 public:
-
     template <typename T>
     // 【如果匹配到 const int *, 则这里的 T == const int *&,  实际上这里都要么是 &， 要么是 &&】
     Value(T&& val)
@@ -74,14 +80,27 @@ public:
         }
     }
 
+    Value(Value&& other)
+    {
+        std::swap(storage_, other.storage_);
+        std::swap(is_const_, other.is_const_);
+        std::swap(ref_type_, other.ref_type_);
+    }
+
+    Value(const Value& other)
+        : storage_{other.storage_}
+        , is_const_{other.is_const_}
+        , ref_type_{other.ref_type_}
+    {}
+
     /**To 目标类型，可能是值，可能是左值引用，可能是右值引用
      **/
     template <typename T>
-    T To() 
+    T To()
     {
         constexpr ERefType tRefType = trait::RefTrait<T>::value;
-        constexpr bool tIsConst = trait::IsConst<T>::value;
-        using RawT = std::remove_cv_t<std::remove_reference_t<T>>;
+        constexpr bool     tIsConst = trait::IsConst<T>::value;
+        using RawT                  = std::remove_cv_t<std::remove_reference_t<T>>;
         if constexpr (tRefType == ERefType::NoneRef) {
             if (ref_type_ == ERefType::NoneRef) {
                 if (is_const_) {
@@ -107,9 +126,9 @@ public:
         }
         else if constexpr (tRefType == ERefType::LeftRef) {
 
-            assert(ref_type_ != ERefType::NoneRef, "Value::To() Because [target is Ref, And Self is Copy, HasError]");
-            assert(!(is_const_ && !tIsConst), "Value::To(): Because const to NoneConst");
-            
+            ASSERT(ref_type_ != ERefType::NoneRef, "Value::To() Because [target is Ref, And Self is Copy, HasError]");
+            ASSERT(!(is_const_ && !tIsConst), "Value::To(): Because const to NoneConst");
+
             if (is_const_) {
                 return *std::any_cast<const RawT*>(storage_);
             }
@@ -118,7 +137,7 @@ public:
             }
         }
         else if constexpr (tRefType == ERefType::RightRef) {
-            assert(ref_type_ != ERefType::NoneRef, "Value::To() Because [target is Ref, And Self is Copy, HasError]");
+            ASSERT(ref_type_ != ERefType::NoneRef, "Value::To() Because [target is Ref, And Self is Copy, HasError]");
             if (ref_type_ == ERefType::LeftRef) {
                 if (is_const_)
                     return std::move(*std::any_cast<const RawT*>(storage_));
@@ -144,59 +163,56 @@ public:
     template <typename T>
     Value(const T* val) = delete;
 
-    bool IsConst() {
-        return is_const_;
-    }
-    int RefType() {
-        return static_cast<int>(ref_type_);
-    }
+    bool IsConst() { return is_const_; }
+    int  RefType() { return static_cast<int>(ref_type_); }
 
 private:
     std::any storage_{};
-    bool is_const_{false};
-    ERefType ref_type_ {ERefType::NoneRef};
+    bool     is_const_{false};
+    ERefType ref_type_{ERefType::NoneRef};
 };
 
-template<typename... Args, size_t N, size_t...Is>
-std::tuple<Args...> AsTuple(std::array<Value, N>&arr, std::index_sequence<Is...>) {
+template <typename... Args, size_t N, size_t... Is>
+std::tuple<Args...> AsTuple(std::array<Value, N>& arr, std::index_sequence<Is...>)
+{
     return std::forward_as_tuple(arr[Is].template To<Args>()...);
 }
 
 
-template <typename... Args, size_t N, typename = std::enable_if_t<N==sizeof...(Args)>>
-std::tuple<Args...> AsTuple(std::array<Value, N>& arr) {
+template <typename... Args, size_t N, typename = std::enable_if_t<N == sizeof...(Args)>>
+std::tuple<Args...> AsTuple(std::array<Value, N>& arr)
+{
     return AsTuple<Args...>(arr, std::make_index_sequence<N>{});
 }
 
 class FuncWrap
 {
 public:
-
-    template<typename... Args>
+    template <typename... Args>
     explicit FuncWrap(void (*func)(Args...))
     {
         n_args_ = sizeof...(Args);
-        func_ = [func](void* args_ptr) {
+        func_   = [func](void* args_ptr) {
             // Value 作为桥梁，实参列表解包-》Value-》形参类型-》打包
-            auto &args = *static_cast<std::array<Value, sizeof...(Args)> *>(args_ptr);
-            auto tp = AsTuple<Args...>(args);
+            auto& args = *static_cast<std::array<Value, sizeof...(Args)>*>(args_ptr);
+            auto  tp   = AsTuple<Args...>(args);
             std::apply(func, tp);
         };
     }
 
-    template<typename... Args>
-        void Invoke(Args&&... args) {
-            assert(n_args_ == sizeof...(Args), "Args Size Error");
-            // 实参参数包 -> 类型为Value的array
-            std::array<Value, sizeof...(Args)> arr = {Value{std::forward<Args>(args)...}};
-            func_(&arr);
-        }
+    template <typename... Args>
+    void Invoke(Args&&... args)
+    {
+        ASSERT(n_args_ == sizeof...(Args), "Args Size Error");
+        // 实参参数包 -> 类型为Value的array
+        std::array<Value, sizeof...(Args)> arr = {Value{std::forward<Args>(args)...}};
+        func_(&arr);
+    }
 
 private:
     std::function<void(void*)> func_{nullptr};
-    int n_args_{0};
-
+    int                        n_args_{0};
 };
 
 
-}
+}   // namespace reflect
