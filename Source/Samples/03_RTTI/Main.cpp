@@ -24,19 +24,24 @@ int main()
 
     Meta::Declare<Foo>().property("x", &Foo::x);
 
-    // const Meta* meta1 = reflect::MetaManager::Instance().Get("Foo");
-    // const Meta* meta2 = reflect::MetaManager::Instance().Get<Foo>();
-    // ASSERT(meta1 != nullptr);
-    // ASSERT(meta1 == meta2);
+    // Meta* m = new Meta(StaticTypeDecl<Foo>::id(), StaticTypeDecl<Foo>::name());
 
-    // meta1->getProprity("x");
+    const Meta* meta1 = reflect::MetaManager::Instance().Get("Foo");
+    const Meta* meta2 = reflect::MetaManager::Instance().Get<Foo>();
+    ASSERT(meta1 != nullptr);
+    ASSERT(meta1 == meta2);
+
+    meta1->getProprity("x");
 
 
 
+    // Foo F;
+    // F.x = 1;
+    // F.y = 2;
 
-    Foo F;
-    F.x = 1;
-    F.y = 2;
+    // auto Prop = meta1->getProprity("x");
+    // Prop->get(&F);
+    // std::cout << "property Foo.x = " << std::endl;
 
 
     std::cout << std::endl << "Success";

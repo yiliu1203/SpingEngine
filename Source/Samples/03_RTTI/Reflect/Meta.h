@@ -36,11 +36,11 @@ public:
 
     const PropertyPtr getProprity(const std::string& name) const
     {
-        // for (auto& item : properties_) {
-        //     if (name.compare(item->name())) {
-        //         return item;
-        //     }
-        // }
+        for (auto item : properties_) {
+            if (name.compare(item->name()) == 0) {
+                return item;
+            }
+        }
         return nullptr;
     }
 
@@ -57,16 +57,16 @@ private:
         : id_{id}
         , name_{name}
         , base_list_{0}
-        , properties_{0}
+        , properties_(0)   // 特别注意 这里的初始化，如果用 {}，调用initiallist
 
-    {}
+    {
+        properties_.resize(0);
+    }
 
     bool addProperty(Property* property)
     {
-        // if (getProprity(property->name())) {
-        //     RTTI_ERROR("Add Repeat Proprity ")
-        // }
         ASSERT(getProprity(property->name()) == nullptr, "Add Repeat Proprity");
+        properties_.push_back(std::shared_ptr<Property>{property});
 
         return true;
     }
@@ -76,8 +76,9 @@ public:
     size_t sizeT_{0};
 
 private:
-    const TypeId             id_;
-    const std::string        name_;
+    const TypeId      id_;
+    const std::string name_;
+    /** Vector 的初始化要特别注意，如果用{}， 会使用initial_list的版本，如果希望分配size, 用（）初始化*/
     std::vector<BaseInfo>    base_list_;
     std::vector<PropertyPtr> properties_;
 };
