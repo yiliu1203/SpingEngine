@@ -6,12 +6,11 @@
 #include <string_view>
 #include <vector>
 
-
-class CommonException : public std::exception
+class ReflectException : public std::exception
 {
 public:
-    CommonException(const std::string& _file_, size_t _line_, const std::string& _func_,
-                    std::initializer_list<std::string> initial_list)
+    ReflectException(const std::string& _file_, size_t _line_, const std::string& _func_,
+                     std::initializer_list<std::string> initial_list)
     {
         std::stringstream ss;
         // (ss << a << " ")...;
@@ -30,11 +29,11 @@ private:
     std::string msg_;
 };
 
-#define RTTI_ERROR(...)                                                                           \
-    {                                                                                             \
-        CommonException exception = CommonException(__FILE__, __LINE__, __func__, {__VA_ARGS__}); \
-        std::cout << exception.what();                                                            \
-        throw exception;                                                                          \
+#define RTTI_ERROR(...)                                                                             \
+    {                                                                                               \
+        ReflectException exception = ReflectException(__FILE__, __LINE__, __func__, {__VA_ARGS__}); \
+        std::cout << exception.what();                                                              \
+        throw exception;                                                                            \
     }
 
 #define ASSERT(condition, ...)      \

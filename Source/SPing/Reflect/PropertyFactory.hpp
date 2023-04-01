@@ -6,11 +6,6 @@
 #include "ValueWrap.hpp"
 #include <vector>
 
-
-
-
-
-
 namespace reflect {
 namespace detail {
 
@@ -29,7 +24,8 @@ public:
     AccessType getter(ClassType& c) const { return bound_.access(c); }
     bool       setter(ClassType& c, const SetType& value) const
     {
-        if constexpr (TRAITS::isWriteable) return bound_.access(c), true;
+        std::cout << TRAITS::isWriteable << "setter" << std::endl;
+        if constexpr (TRAITS::isWriteable) return bound_.access(c) = value, true;
         return false;
     }
 

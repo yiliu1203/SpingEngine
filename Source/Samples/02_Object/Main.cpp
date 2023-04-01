@@ -17,6 +17,8 @@ public:
     explicit TestA(Context* context)
         : Object(context){};
     ~TestA(){};
+
+    int a_{0};
 };
 
 class TestB : public TestA
@@ -30,7 +32,15 @@ public:
         std::cout << "ConstructB" << std::endl;
     };
     ~TestB() { std::cout << "DestroyB" << std::endl; };
+    int b_{0};
 };
+
+
+RTTI_TYPE(TestA);
+RTTI_TYPE(TestB);
+
+
+
 
 class Test0
 {
@@ -54,8 +64,7 @@ int Add(int a, int b)
 int main()
 {
     {
-        std::cout << "********************test Object**************************************"
-                  << std::endl;
+        std::cout << "********************test Object**************************************" << std::endl;
         Context* context1 = new Context();
 
         TestA*  a = new TestA(context1);
@@ -72,8 +81,7 @@ int main()
     }
 
     {
-        std::cout << "**************************Test SharePtr *********************************"
-                  << std::endl;
+        std::cout << "**************************Test SharePtr *********************************" << std::endl;
         Context*        context2 = new Context();
         TestA*          rawPtrA  = new TestA(context2);
         TestB*          rawPtrB  = new TestB(context2);
@@ -98,9 +106,7 @@ int main()
     }
 
     {
-        std::cout
-            << "**************************Test Vector Matrix *********************************"
-            << std::endl;
+        std::cout << "**************************Test Vector Matrix *********************************" << std::endl;
         using namespace SPing::Math;
         Vec2 v2_0;
         std::cout << v2_0;
@@ -113,12 +119,33 @@ int main()
     }
 
     {
-        std::cout << "**************************Test Delegate *********************************"
-                  << std::endl;
-
+        std::cout << "**************************Test Delegate *********************************" << std::endl;
         TestDeletage testDelegate;
         typedef int (TestDeletage::*CF)(int, int);
         CF cf = &(TestDeletage::Add);
         std::cout << "testDelegate.*cf: " << (testDelegate.*cf)(1, 2) << std::endl;
+    }
+
+    {
+        std::cout << "*************************TestReflect**************************************" << std::endl;
+
+        std::cout << reflect::StaticTypeDecl<TestA>::name() << " " << std::endl;
+        reflect::Meta::Declare<TestA>().property("a_", &TestA::a_);
+        reflect::Meta::Declare<TestB>().property("b_", &TestB::b_);
+
+        const reflect::Meta* meta1 = reflect::MetaManager::Instance().Get("TestA");
+        const reflect::Meta* meta2 = reflect::MetaManager::Instance().Get<TestA>();
+        ASSERT(meta1 != nullptr);
+        ASSERT(meta1 == meta2);
+
+        TestB testB{nullptr};
+        auto  metaB     = reflect::MetaManager::Instance().Get("TestB");
+        auto  propertyB = metaB->getProperty("b_");
+        std::cout << propertyB->get(&testB).To<int>() << std::endl;
+        testB.b_ = 10;
+        std::cout << propertyB->get(&testB).To<int>() << std::endl;
+        propertyB->set(&testB, 100);
+        std::cout << propertyB->get(&testB).To<int>() << std::endl;
+        std::cout << "success" << std::endl;
     }
 }

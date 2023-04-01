@@ -37,6 +37,12 @@ int main()
     auto propY = meta1->getProprity("y");
     std::cout << "property Foo.x = " << propX->get(&F).To<int>() << std::endl;
     std::cout << "property Foo.y = " << propY->get(&F).To<int>() << std::endl;
+    propX->set(&F, 10);
+    propY->set(&F, 20);
+
+    std::cout << "test set" << std::endl;
+    std::cout << "property Foo.x = " << propX->get(&F).To<int>() << std::endl;
+    std::cout << "property Foo.y = " << propY->get(&F).To<int>() << std::endl;
 
 
     std::cout << std::endl << "Success";

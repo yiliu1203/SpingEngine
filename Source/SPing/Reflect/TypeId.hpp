@@ -1,12 +1,12 @@
 #pragma once
-#include "Macro.h"
+#include "ReflectMacro.h"
 #include <ostream>
 #include <type_traits>
 #include <typeindex>
 
 
 namespace reflect {
-using TypeId = std::type_index;
+using TypeId = std::type_index;   // 类型的唯一id
 
 template <typename T>
 inline TypeId CalcTypeId()

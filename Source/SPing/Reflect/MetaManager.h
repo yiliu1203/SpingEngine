@@ -1,5 +1,5 @@
 #pragma once
-#include "Macro.h"
+#include "ReflectMacro.h"
 #include "Typeid.hpp"
 #include <map>
 

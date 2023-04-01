@@ -1,8 +1,11 @@
 #pragma once
-#include "Macro.h"
 #include "Meta.h"
 #include "Property.h"
 #include "PropertyFactory.hpp"
+#include "ReflectMacro.h"
+
+
+
 
 namespace reflect {
 

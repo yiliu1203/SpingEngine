@@ -26,7 +26,12 @@ public:
         return Value{accessor_.accessor_.getter(*(static_cast<typename GETSET_ASSESSOR::ClassType*>(obj)))};
     }
 
-    void setValue(void* obj, const Value& val) const final {}
+    void setValue(void* obj, const Value& val) const final
+    {
+        val.To<typename GETSET_ASSESSOR::InterfaceType::SetType>();
+        accessor_.accessor_.setter(*(static_cast<typename GETSET_ASSESSOR::ClassType*>(obj)),
+                                   val.To<typename GETSET_ASSESSOR::InterfaceType::SetType>());
+    }
 
 private:
     GETSET_ASSESSOR accessor_;

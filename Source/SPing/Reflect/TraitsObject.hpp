@@ -17,7 +17,7 @@ struct TypeTraits
     using DereferencedType                       = PureType;
     static constexpr ReferenceKind referenceKind = std::is_reference_v<T> ? ReferenceKind::Reference : ReferenceKind::Instance;
     static constexpr ValueKind     valueKind     = ValueKindMapper<std::remove_const_t<PureType>>::valueKind;
-    static constexpr bool          isWriteable   = std::is_const_v<DereferencedType>;
+    static constexpr bool          isWriteable   = !std::is_const_v<DereferencedType>;
     static constexpr bool          isRef         = std::is_reference_v<T> || std::is_pointer_v<T>;
 };
 
@@ -33,7 +33,7 @@ struct TypeTraits<T*>
     using DereferencedType                       = PureType;
     static constexpr ReferenceKind referenceKind = ReferenceKind::Pointer;
     static constexpr ValueKind     valueKind     = ValueKindMapper<std::remove_const_t<PureType>>::valueKind;
-    static constexpr bool          isWriteable   = std::is_const_v<DereferencedType>;
+    static constexpr bool          isWriteable   = !std::is_const_v<DereferencedType>;
     static constexpr bool          isRef         = std::is_reference_v<T> || std::is_pointer_v<T>;
 };
 

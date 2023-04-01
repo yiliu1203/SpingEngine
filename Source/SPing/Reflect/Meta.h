@@ -1,11 +1,12 @@
 #pragma once
-#include "Macro.h"
 #include "MetaManager.h"
 #include "Property.h"
+#include "ReflectMacro.h"
 #include "TypeId.hpp"
 #include <map>
 #include <memory>
 #include <vector>
+
 
 
 
@@ -34,7 +35,7 @@ public:
     const TypeId&     id() { return this->id_; }
     const std::string name() { return this->name_; }
 
-    const PropertyPtr getProprity(const std::string& name) const
+    const PropertyPtr getProperty(const std::string& name) const
     {
         for (auto item : properties_) {
             if (name.compare(item->name()) == 0) {
@@ -59,13 +60,11 @@ private:
         , base_list_{0}
         , properties_(0)   // 特别注意 这里的初始化，如果用 {}，调用initiallist
 
-    {
-        properties_.resize(0);
-    }
+    {}
 
     bool addProperty(Property* property)
     {
-        ASSERT(getProprity(property->name()) == nullptr, "Add Repeat Proprity");
+        ASSERT(getProperty(property->name()) == nullptr, "Add Repeat Proprity");
         properties_.push_back(std::shared_ptr<Property>{property});
 
         return true;
