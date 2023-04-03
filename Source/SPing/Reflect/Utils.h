@@ -1,12 +1,12 @@
 #pragma once
-#include <typeindex>
-#include <type_traits>
-#include <ostream>
 #include "TypeId.hpp"
+#include <iostream>
+#include <type_traits>
+#include <typeindex>
 
-namespace reflect
-{
-std::ostream& operator<<( std::ostream & os, TypeId typeId);
+
+namespace reflect {
+std::ostream& operator<<(std::ostream& os, TypeId typeId);
 
 
 }

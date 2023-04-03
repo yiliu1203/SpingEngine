@@ -1,5 +1,7 @@
 #pragma once
 
+
+
 #include <functional>
 #include <iostream>
 #include <sstream>
@@ -11,7 +13,6 @@
 
 #include "Core/Utils.h"
 #include "MacroConfig.h"
-#include "Reflect/Reflect.h"
 #include <algorithm>
 #include <assert.h>
 #include <functional>
@@ -23,9 +24,6 @@
 #ifdef SP_PLATFORM_WIN
 #    include <Windows.h>
 #endif
-
-
-
 
 #ifndef SP_CORE_H
 
@@ -39,11 +37,8 @@
 #            define SP_API
 #        endif
 #    endif
-
-
-
 // ---------------BIT--------------------
 #    define BIT(x) 1 << x
-
-
 #endif
+
+// #include "Reflect/Reflect.h"

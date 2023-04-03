@@ -6,6 +6,7 @@
 #include <string_view>
 #include <vector>
 
+
 class ReflectException : public std::exception
 {
 public:
@@ -43,7 +44,7 @@ private:
         }                           \
     }
 
-// #define RTTI_ERROR(...)
+#define RTTI_ERROR2(...)
 #ifndef SP_API
 #    define SP_API
 #endif

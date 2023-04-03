@@ -1,7 +1,11 @@
 #pragma once
 #include <algorithm>
+#include <iostream>
+
 
 namespace SPing {
+
+class TypeId;
 
 template <typename T>
 void Swap(T& first, T& second)
@@ -10,4 +14,6 @@ void Swap(T& first, T& second)
     swap(first, second);
 }
 
-}
+std::ostream& operator<<(std::ostream& os, const TypeId& typeId);
+
+}   // namespace SPing

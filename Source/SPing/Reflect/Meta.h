@@ -32,8 +32,10 @@ public:
         return MetaBuilder<T>(meta);
     }
 
-    const TypeId&     id() { return this->id_; }
-    const std::string name() { return this->name_; }
+    const TypeId&     id() const { return this->id_; }
+    const std::string name() const { return this->name_; }
+
+    void SetBase(const Meta* base) { base_ = base; }
 
     const PropertyPtr getProperty(const std::string& name) const
     {
@@ -45,21 +47,27 @@ public:
         return nullptr;
     }
 
+    bool IsTypeOf(const TypeId& typeId) const
+    {
+        // if (id_ == typeid) return true;
+        return false;
+    }
+
+    bool IsTypeOf(const std::string& typeName) const
+    {
+        // if (id_ == typeid) return true;
+        return false;
+    }
+
 private:
     template <typename T>
     friend class MetaBuilder;
-    struct BaseInfo
-    {
-        const Meta* base;
-        int         offset;
-    };
 
     Meta(const TypeId& id, const std::string& name)
         : id_{id}
         , name_{name}
-        , base_list_{0}
+        , base_{nullptr}
         , properties_(0)   // 特别注意 这里的初始化，如果用 {}，调用initiallist
-
     {}
 
     bool addProperty(Property* property)
@@ -70,7 +78,6 @@ private:
         return true;
     }
 
-
 public:
     size_t sizeT_{0};
 
@@ -78,10 +85,8 @@ private:
     const TypeId      id_;
     const std::string name_;
     /** Vector 的初始化要特别注意，如果用{}， 会使用initial_list的版本，如果希望分配size, 用（）初始化*/
-    std::vector<BaseInfo>    base_list_;
+    const Meta*              base_;
     std::vector<PropertyPtr> properties_;
 };
-
-
 
 }   // namespace reflect

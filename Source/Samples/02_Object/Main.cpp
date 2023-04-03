@@ -35,11 +35,10 @@ public:
     int b_{0};
 };
 
-
 RTTI_TYPE(TestA);
 RTTI_TYPE(TestB);
 
-
+// reflect::Meta::Declare<TestA>()
 
 
 class Test0

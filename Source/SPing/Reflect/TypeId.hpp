@@ -6,7 +6,11 @@
 
 
 namespace reflect {
+
 using TypeId = std::type_index;   // 类型的唯一id
+
+// 注意 type_info 是忽略 const 和 引用的，指针影响 typeid.
+// typeid(int) == typeid(const int) == typeid(int&).  typeid(int*) !== typeid(int)=
 
 template <typename T>
 inline TypeId CalcTypeId()
@@ -31,6 +35,34 @@ struct StaticTypeDecl
         return "";
     }
 };
+
+template <typename T>
+struct StaticTypeDecl2
+{
+    using Type = T;
+    static StaticTypeDecl2 Instance()
+    {
+        static StaticTypeDecl2 mm;
+        return mm;
+    }
+
+    static const TypeId id()
+    {
+        static_assert(false, "StaticTypeDecl Not Declare");
+        return 0;
+    };
+
+    static constexpr const char* name()
+    {
+        static_assert(false, "StaticTypeDecl Not Declare");
+        return "";
+    }
+
+
+
+    // static constexpr IsTypeOf(const TypeId& other) {}
+};
+
 
 enum class ValueKind
 {
