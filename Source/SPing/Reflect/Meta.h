@@ -1,5 +1,5 @@
 #pragma once
-// #include "MetaManager.h"
+#include "MetaManager.h"
 #include "Property.h"
 #include "ReflectMacro.h"
 #include "TypeAlias.h"

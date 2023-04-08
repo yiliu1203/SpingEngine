@@ -1,4 +1,5 @@
 #pragma once
+#pragma warning(disable : 4819)
 
 
 
@@ -40,3 +41,5 @@
 // ---------------BIT--------------------
 #    define BIT(x) 1 << x
 #endif
+
+#include "Reflect/Reflect.h"

@@ -3,7 +3,9 @@
 #include "Core/Ptr.h"
 #include "Math/Matrix.h"
 #include "Math/Vector.h"
+#include "Reflect/Reflect.h"
 #include <iostream>
+
 
 
 using namespace SPing;
