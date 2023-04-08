@@ -71,6 +71,12 @@ target("06_Exception")
     add_files("Source/Samples/06_Exception/**/*.cpp")
     add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
 
+target("07_Using")
+    set_kind("binary")
+    add_files("Source/Samples/07_Using/*.cpp")
+    add_files("Source/Samples/07_Using/**/*.cpp")
+    add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
+
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
 --

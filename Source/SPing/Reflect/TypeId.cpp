@@ -1,8 +1,4 @@
 #pragma once
 #include "Typeid.hpp"
 
-namespace reflect
-{
-
-
-}
+namespace reflect {}

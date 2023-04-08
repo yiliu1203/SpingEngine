@@ -3,11 +3,9 @@
 #include "Typeid.hpp"
 #include <map>
 
-
 namespace reflect {
 
 class Meta;
-
 class SP_API MetaManager
 {
 public:

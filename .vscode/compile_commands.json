@@ -1,6 +1,11 @@
 [
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.02_Object.pdb", "/Od", "/std:c++17", "/ISource\\SPing", "/Ibuild\\config\\02_Object", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\02_Object\\windows\\x86\\debug\\Source\\Samples\\02_Object\\Main.cpp.obj", "Source\\Samples\\02_Object\\Main.cpp"],
+  "file": "Source\\Samples\\02_Object\\Main.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
   "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\SPing.pdb", "/Od", "/std:c++17", "/ISource\\SPing", "/Ibuild\\config\\SPing", "/DSP_PLATFORM_WIN", "/DSP_BUILD_DLL", "/EHsc", "/Fobuild\\.objs\\SPing\\windows\\x86\\debug\\Source\\SPing\\Core\\Context.cpp.obj", "Source\\SPing\\Core\\Context.cpp"],
   "file": "Source\\SPing\\Core\\Context.cpp"
 },
@@ -56,8 +61,43 @@
 },
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.06_Exception.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\06_Exception\\windows\\x86\\debug\\Source\\Samples\\06_Exception\\main.cpp.obj", "Source\\Samples\\06_Exception\\main.cpp"],
-  "file": "Source\\Samples\\06_Exception\\main.cpp"
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\SPing.pdb", "/Od", "/std:c++17", "/ISource\\SPing", "/Ibuild\\config\\SPing", "/DSP_PLATFORM_WIN", "/DSP_BUILD_DLL", "/EHsc", "/Fobuild\\.objs\\SPing\\windows\\x86\\debug\\Source\\SPing\\Reflect\\Meta.cpp.obj", "Source\\SPing\\Reflect\\Meta.cpp"],
+  "file": "Source\\SPing\\Reflect\\Meta.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\SPing.pdb", "/Od", "/std:c++17", "/ISource\\SPing", "/Ibuild\\config\\SPing", "/DSP_PLATFORM_WIN", "/DSP_BUILD_DLL", "/EHsc", "/Fobuild\\.objs\\SPing\\windows\\x86\\debug\\Source\\SPing\\Reflect\\MetaBuilder.cpp.obj", "Source\\SPing\\Reflect\\MetaBuilder.cpp"],
+  "file": "Source\\SPing\\Reflect\\MetaBuilder.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\SPing.pdb", "/Od", "/std:c++17", "/ISource\\SPing", "/Ibuild\\config\\SPing", "/DSP_PLATFORM_WIN", "/DSP_BUILD_DLL", "/EHsc", "/Fobuild\\.objs\\SPing\\windows\\x86\\debug\\Source\\SPing\\Reflect\\MetaManager.cpp.obj", "Source\\SPing\\Reflect\\MetaManager.cpp"],
+  "file": "Source\\SPing\\Reflect\\MetaManager.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\SPing.pdb", "/Od", "/std:c++17", "/ISource\\SPing", "/Ibuild\\config\\SPing", "/DSP_PLATFORM_WIN", "/DSP_BUILD_DLL", "/EHsc", "/Fobuild\\.objs\\SPing\\windows\\x86\\debug\\Source\\SPing\\Reflect\\Property.cpp.obj", "Source\\SPing\\Reflect\\Property.cpp"],
+  "file": "Source\\SPing\\Reflect\\Property.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\SPing.pdb", "/Od", "/std:c++17", "/ISource\\SPing", "/Ibuild\\config\\SPing", "/DSP_PLATFORM_WIN", "/DSP_BUILD_DLL", "/EHsc", "/Fobuild\\.objs\\SPing\\windows\\x86\\debug\\Source\\SPing\\Reflect\\TypeId.cpp.obj", "Source\\SPing\\Reflect\\TypeId.cpp"],
+  "file": "Source\\SPing\\Reflect\\TypeId.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\SPing.pdb", "/Od", "/std:c++17", "/ISource\\SPing", "/Ibuild\\config\\SPing", "/DSP_PLATFORM_WIN", "/DSP_BUILD_DLL", "/EHsc", "/Fobuild\\.objs\\SPing\\windows\\x86\\debug\\Source\\SPing\\Reflect\\TypeIndex.cpp.obj", "Source\\SPing\\Reflect\\TypeIndex.cpp"],
+  "file": "Source\\SPing\\Reflect\\TypeIndex.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\SPing.pdb", "/Od", "/std:c++17", "/ISource\\SPing", "/Ibuild\\config\\SPing", "/DSP_PLATFORM_WIN", "/DSP_BUILD_DLL", "/EHsc", "/Fobuild\\.objs\\SPing\\windows\\x86\\debug\\Source\\SPing\\Reflect\\UserObject..cpp.obj", "Source\\SPing\\Reflect\\UserObject..cpp"],
+  "file": "Source\\SPing\\Reflect\\UserObject..cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\SPing.pdb", "/Od", "/std:c++17", "/ISource\\SPing", "/Ibuild\\config\\SPing", "/DSP_PLATFORM_WIN", "/DSP_BUILD_DLL", "/EHsc", "/Fobuild\\.objs\\SPing\\windows\\x86\\debug\\Source\\SPing\\Reflect\\Utils.cpp.obj", "Source\\SPing\\Reflect\\Utils.cpp"],
+  "file": "Source\\SPing\\Reflect\\Utils.cpp"
 },
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
@@ -66,53 +106,8 @@
 },
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.03_RTTI.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\03_RTTI\\windows\\x86\\debug\\Source\\Samples\\03_RTTI\\Reflect\\Meta.cpp.obj", "Source\\Samples\\03_RTTI\\Reflect\\Meta.cpp"],
-  "file": "Source\\Samples\\03_RTTI\\Reflect\\Meta.cpp"
-},
-{
-  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.03_RTTI.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\03_RTTI\\windows\\x86\\debug\\Source\\Samples\\03_RTTI\\Reflect\\MetaBuilder.cpp.obj", "Source\\Samples\\03_RTTI\\Reflect\\MetaBuilder.cpp"],
-  "file": "Source\\Samples\\03_RTTI\\Reflect\\MetaBuilder.cpp"
-},
-{
-  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.03_RTTI.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\03_RTTI\\windows\\x86\\debug\\Source\\Samples\\03_RTTI\\Reflect\\MetaManager.cpp.obj", "Source\\Samples\\03_RTTI\\Reflect\\MetaManager.cpp"],
-  "file": "Source\\Samples\\03_RTTI\\Reflect\\MetaManager.cpp"
-},
-{
-  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.03_RTTI.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\03_RTTI\\windows\\x86\\debug\\Source\\Samples\\03_RTTI\\Reflect\\Property.cpp.obj", "Source\\Samples\\03_RTTI\\Reflect\\Property.cpp"],
-  "file": "Source\\Samples\\03_RTTI\\Reflect\\Property.cpp"
-},
-{
-  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.03_RTTI.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\03_RTTI\\windows\\x86\\debug\\Source\\Samples\\03_RTTI\\Reflect\\TypeId.cpp.obj", "Source\\Samples\\03_RTTI\\Reflect\\TypeId.cpp"],
-  "file": "Source\\Samples\\03_RTTI\\Reflect\\TypeId.cpp"
-},
-{
-  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.03_RTTI.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\03_RTTI\\windows\\x86\\debug\\Source\\Samples\\03_RTTI\\Reflect\\UserObject..cpp.obj", "Source\\Samples\\03_RTTI\\Reflect\\UserObject..cpp"],
-  "file": "Source\\Samples\\03_RTTI\\Reflect\\UserObject..cpp"
-},
-{
-  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.03_RTTI.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\03_RTTI\\windows\\x86\\debug\\Source\\Samples\\03_RTTI\\Reflect\\Utils.cpp.obj", "Source\\Samples\\03_RTTI\\Reflect\\Utils.cpp"],
-  "file": "Source\\Samples\\03_RTTI\\Reflect\\Utils.cpp"
-},
-{
-  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.05_Template.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\05_Template\\windows\\x86\\debug\\Source\\Samples\\05_Template\\main.cpp.obj", "Source\\Samples\\05_Template\\main.cpp"],
-  "file": "Source\\Samples\\05_Template\\main.cpp"
-},
-{
-  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
   "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.01_HelloWorld.pdb", "/Od", "/std:c++17", "/ISource\\SPing", "/Ibuild\\config\\01_HelloWorld", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\01_HelloWorld\\windows\\x86\\debug\\Source\\Samples\\01_HelloWorld\\HelloWorld.cpp.obj", "Source\\Samples\\01_HelloWorld\\HelloWorld.cpp"],
   "file": "Source\\Samples\\01_HelloWorld\\HelloWorld.cpp"
-},
-{
-  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.02_Object.pdb", "/Od", "/std:c++17", "/ISource\\SPing", "/Ibuild\\config\\02_Object", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\02_Object\\windows\\x86\\debug\\Source\\Samples\\02_Object\\Main.cpp.obj", "Source\\Samples\\02_Object\\Main.cpp"],
-  "file": "Source\\Samples\\02_Object\\Main.cpp"
 },
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
@@ -123,4 +118,19 @@
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
   "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.04_RTTI_Simple.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\04_RTTI_Simple\\windows\\x86\\debug\\Source\\Samples\\04_RTTI_Simple\\reflect.cpp.obj", "Source\\Samples\\04_RTTI_Simple\\reflect.cpp"],
   "file": "Source\\Samples\\04_RTTI_Simple\\reflect.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.06_Exception.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\06_Exception\\windows\\x86\\debug\\Source\\Samples\\06_Exception\\main.cpp.obj", "Source\\Samples\\06_Exception\\main.cpp"],
+  "file": "Source\\Samples\\06_Exception\\main.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.07_Using.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\07_Using\\windows\\x86\\debug\\Source\\Samples\\07_Using\\main.cpp.obj", "Source\\Samples\\07_Using\\main.cpp"],
+  "file": "Source\\Samples\\07_Using\\main.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.05_Template.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\05_Template\\windows\\x86\\debug\\Source\\Samples\\05_Template\\main.cpp.obj", "Source\\Samples\\05_Template\\main.cpp"],
+  "file": "Source\\Samples\\05_Template\\main.cpp"
 }]

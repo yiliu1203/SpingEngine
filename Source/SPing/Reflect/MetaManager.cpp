@@ -1,6 +1,9 @@
 #include "MetaManager.h"
 #include "Meta.h"
 
+
+
+
 namespace reflect {
 
 Meta& MetaManager::AddMeta(const TypeId& id, const std::string& name)

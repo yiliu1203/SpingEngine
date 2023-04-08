@@ -1,11 +1,10 @@
 #pragma once
+#include "TypeAlias.h"
 #include <algorithm>
 #include <iostream>
 
 
 namespace SPing {
-
-class TypeId;
 
 template <typename T>
 void Swap(T& first, T& second)

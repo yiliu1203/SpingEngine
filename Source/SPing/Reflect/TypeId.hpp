@@ -1,13 +1,14 @@
 #pragma once
+
 #include "ReflectMacro.h"
+#include "TypeAlias.h"
+#include "TypeIndex.h"
 #include <ostream>
 #include <type_traits>
 #include <typeindex>
 
 
 namespace reflect {
-
-using TypeId = std::type_index;   // 类型的唯一id
 
 // 注意 type_info 是忽略 const 和 引用的，指针影响 typeid.
 // typeid(int) == typeid(const int) == typeid(int&).  typeid(int*) !== typeid(int)=

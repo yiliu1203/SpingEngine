@@ -1,14 +1,19 @@
 #pragma once
 #include "../Reflect/Meta.h"
+#include "../Reflect/TypeIndex.h"
 #include "SPingPre.h"
 #include "StringHash.h"
+#include "TypeAlias.h"
+
+
 
 
 namespace SPing {
 
 class Context;
 using TypeInfo = reflect::Meta;
-using TypeId   = std::type_index;   // 类型的唯一id
+// class TypeInfo;
+// class TypeId;
 
 // class SP_API TypeInfo
 // {
@@ -175,13 +180,13 @@ public:
     ObjectFactory(Context* context)
         : context_(context)
     {}
-    const TypeInfo*    GetTypeInfo() const { return typeInfo_; }
-    const std::string& GetTypeName() const { return typeInfo_->name(); }
-    const TypeId&      GetType() const { return typeInfo_->id(); }
+    const reflect::Meta*   GetTypeInfo() const { return typeInfo_; }
+    const std::string&     GetTypeName() const { return typeInfo_->name(); }
+    const TypeId& GetType() const { return typeInfo_->id(); }
     //virtual std::shared_ptr<Object> CreateObject() = 0;
 protected:
-    const TypeInfo* typeInfo_{};   // 它实质上是指向一个静态局部变量
-    Context*        context_;
+    const reflect::Meta* typeInfo_{};   // 它实质上是指向一个静态局部变量
+    Context*             context_;
 };
 
 template <typename T>

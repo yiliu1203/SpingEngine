@@ -17,6 +17,3 @@
         }                                                \
     };                                                   \
     }
-
-#define RTTI_TYPE2(...)
-namespace reflect {}

@@ -1,9 +1,4 @@
 #pragma once
 #include "Property.h"
 
-namespace reflect {
-
-
-
-
-}
+namespace reflect {}
