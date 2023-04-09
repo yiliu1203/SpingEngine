@@ -4,6 +4,7 @@
 #include "SPingPre.h"
 #include "StringHash.h"
 #include "TypeAlias.h"
+#include <type_traits>
 
 
 
@@ -150,26 +151,48 @@ private:
 
 // static const TypeInfo staticInfo(#TYPE_NAME, BASE_TYPE_NAME::GetTypeInfoStatic());
 
-#define TYPE_RTTI(TYPE_NAME, BASE_TYPE_NAME)                                                                        \
-public:                                                                                                             \
-    static const TypeInfo* GetTypeInfoStatic()                                                                      \
-    {                                                                                                               \
-        auto staticInfo = reflect::MetaManager::Instance().AddMeta(std::type_index(typeid(TYPE_NAME)), #TYPE_NAME); \
-        staticInfo.SetBase(BASE_TYPE_NAME::GetTypeInfoStatic());                                                    \
-        return &staticInfo;                                                                                         \
-    }                                                                                                               \
-    virtual const TypeId& GetType() const                                                                           \
-    {                                                                                                               \
-        return TYPE_NAME::GetTypeInfoStatic()->id();                                                                \
-    }                                                                                                               \
-    virtual const std::string GetTypeName() const                                                                   \
-    {                                                                                                               \
-        return TYPE_NAME::GetTypeInfoStatic()->name();                                                              \
-    }                                                                                                               \
-    virtual const TypeInfo* GetTypeInfo() const                                                                     \
-    {                                                                                                               \
-        return TYPE_NAME::GetTypeInfoStatic();                                                                      \
+#define TYPE_RTTI(TYPE_NAME, BASE_TYPE_NAME)                                                                                   \
+public:                                                                                                                        \
+    struct StaticTypeDecl                                                                                                      \
+    {                                                                                                                          \
+        static const TypeId id()                                                                                               \
+        {                                                                                                                      \
+            return std::type_index(typeid(TYPE_NAME));                                                                         \
+        }                                                                                                                      \
+        static constexpr const char* name()                                                                                    \
+        {                                                                                                                      \
+            return #TYPE_NAME;                                                                                                 \
+        }                                                                                                                      \
+    };                                                                                                                         \
+    static const TypeInfo* GetTypeInfoStatic()                                                                                 \
+    {                                                                                                                          \
+        static TypeInfo staticInfo = reflect::MetaManager::Instance().AddMeta(std::type_index(typeid(TYPE_NAME)), #TYPE_NAME); \
+        staticInfo.SetBase(BASE_TYPE_NAME::GetTypeInfoStatic());                                                               \
+        return &staticInfo;                                                                                                    \
+    }                                                                                                                          \
+    virtual const TypeId& GetType() const                                                                                      \
+    {                                                                                                                          \
+        return TYPE_NAME::GetTypeInfoStatic()->id();                                                                           \
+    }                                                                                                                          \
+    virtual const std::string GetTypeName() const                                                                              \
+    {                                                                                                                          \
+        return TYPE_NAME::GetTypeInfoStatic()->name();                                                                         \
+    }                                                                                                                          \
+    virtual const TypeInfo* GetTypeInfo() const                                                                                \
+    {                                                                                                                          \
+        return TYPE_NAME::GetTypeInfoStatic();                                                                                 \
     }
+
+
+
+// 根据是否有 GetTypeInfoStatic 静态成员判断是否继承至 Object
+template <typename T, typename = void>
+class InheritFromObject : public std::false_type
+{};
+
+template <typename T>
+class InheritFromObject<T, std::void_t<typename T::StaticTypeDecl>> : public std::true_type
+{};
 
 
 
@@ -180,9 +203,9 @@ public:
     ObjectFactory(Context* context)
         : context_(context)
     {}
-    const reflect::Meta*   GetTypeInfo() const { return typeInfo_; }
-    const std::string&     GetTypeName() const { return typeInfo_->name(); }
-    const TypeId& GetType() const { return typeInfo_->id(); }
+    const reflect::Meta* GetTypeInfo() const { return typeInfo_; }
+    const std::string&   GetTypeName() const { return typeInfo_->name(); }
+    const TypeId&        GetType() const { return typeInfo_->id(); }
     //virtual std::shared_ptr<Object> CreateObject() = 0;
 protected:
     const reflect::Meta* typeInfo_{};   // 它实质上是指向一个静态局部变量

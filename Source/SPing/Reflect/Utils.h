@@ -8,5 +8,4 @@
 namespace reflect {
 std::ostream& operator<<(std::ostream& os, TypeId typeId);
 
-
 }

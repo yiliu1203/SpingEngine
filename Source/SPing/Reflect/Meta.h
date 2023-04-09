@@ -28,9 +28,17 @@ public:
     template <typename T>
     static reflect::MetaBuilder<T> Declare()
     {
-        using TypeDecl = StaticTypeDecl<T>;   // 实例化一个 Type类型，只有id和name
-        Meta& meta     = reflect::MetaManager::Instance().AddMeta(TypeDecl::id(), TypeDecl::name());
-        return reflect::MetaBuilder<T>(meta);
+        if constexpr (InheritFromObject<T>::value) {
+            using TypeDecl = T::StaticTypeDecl;   // 实例化一个 Type类型，只有id和name
+            // Meta& meta     = reflect::MetaManager::Instance().AddMeta(TypeDecl::id(), TypeDecl::name());
+            Meta* meta = reflect::MetaManager::Instance().Get(TypeDecl::id());
+            return reflect::MetaBuilder<T>(*meta);
+        }
+        else {
+            using TypeDecl = StaticTypeDecl<T>;   // 实例化一个 Type类型，只有id和name
+            Meta& meta     = reflect::MetaManager::Instance().AddMeta(TypeDecl::id(), TypeDecl::name());
+            return reflect::MetaBuilder<T>(meta);
+        }
     }
 
     const TypeId&     id() const { return this->id_; }
@@ -50,13 +58,29 @@ public:
 
     bool IsTypeOf(const TypeId& typeId) const
     {
-        // if (id_ == typeid) return true;
+        if (id_ == typeId) return true;
+        const Meta* base = base_;
+        while (base) {
+            if (base->id_ == typeId) {
+                return true;
+            }
+            base = base->base_;
+        }
+
         return false;
     }
 
     bool IsTypeOf(const std::string& typeName) const
     {
-        // if (id_ == typeid) return true;
+        if (name_ == typeName) return true;
+        const Meta* base = base_;
+        while (base) {
+            if (base->name_ == typeName) {
+                return true;
+            }
+            base = base->base_;
+        }
+
         return false;
     }
 

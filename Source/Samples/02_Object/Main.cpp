@@ -12,7 +12,6 @@ using namespace SPing;
 
 class TestA : public Object
 {
-
     TYPE_RTTI(TestA, Object);
 
 public:
@@ -37,8 +36,8 @@ public:
     int b_{0};
 };
 
-RTTI_TYPE(TestA);
-RTTI_TYPE(TestB);
+// RTTI_TYPE(TestA);
+// RTTI_TYPE(TestB);
 
 // reflect::Meta::Declare<TestA>()
 
@@ -130,7 +129,9 @@ int main()
     {
         std::cout << "*************************TestReflect**************************************" << std::endl;
 
-        std::cout << reflect::StaticTypeDecl<TestA>::name() << " " << std::endl;
+        std::cout << InheritFromObject<TestA>::value;
+
+        // std::cout << reflect::StaticTypeDecl<TestA>::name() << " " << std::endl;
         reflect::Meta::Declare<TestA>().property("a_", &TestA::a_);
         reflect::Meta::Declare<TestB>().property("b_", &TestB::b_);
 

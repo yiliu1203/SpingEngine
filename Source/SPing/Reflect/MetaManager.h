@@ -1,7 +1,9 @@
 #pragma once
 #include "ReflectMacro.h"
+#include "TypeAlias.h"
 #include "Typeid.hpp"
 #include <map>
+
 
 namespace reflect {
 
@@ -23,7 +25,13 @@ public:
         return iter == meta_ids_.end() ? nullptr : iter->second;
     }
 
-    const Meta* Get(const std::string& name)
+    Meta* Get(const TypeId& id)
+    {
+        auto iter = meta_ids_.find(id.hash_code());
+        return iter == meta_ids_.end() ? nullptr : iter->second;
+    }
+
+    Meta* Get(const std::string& name)
     {
         auto iter = meta_names_.find(name);
         return iter == meta_names_.end() ? nullptr : iter->second;
@@ -32,7 +40,12 @@ public:
     template <typename T>
     const Meta* Get()
     {
-        return Get(StaticTypeDecl<T>::id());
+        if constexpr (SPing::InheritFromObject<T>::value) {
+            return Get(T::StaticTypeDecl::id());
+        }
+        else {
+            return Get(StaticTypeDecl<T>::id());
+        }
     }
 
 

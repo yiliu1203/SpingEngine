@@ -19,6 +19,18 @@ template <typename T>
 class has_member<T, std::void_t<decltype(T::member)>> : public std::true_type
 {};
 
+
+// 根据是否有 GetTypeInfoStatic 静态成员判断是否继承至 Object
+template <typename T, typename = void>
+class InheritFromObject : public std::false_type
+{};
+
+template <typename T>
+class InheritFromObject<T, std::void_t<typename T::StaticTypeDecl>> : public std::true_type
+{};
+
+
+
 struct test_has_member
 {
     int member;
@@ -32,8 +44,7 @@ class is_smart_ptr : public std::false_type
 {};
 
 template <typename T>
-class is_smart_ptr<
-    T, std::void_t<decltype(std::declval<T>().operator->()), decltype(std::declval<T>().get())>>
+class is_smart_ptr<T, std::void_t<decltype(std::declval<T>().operator->()), decltype(std::declval<T>().get())>>
     : public std::true_type
 {};
 
@@ -65,8 +76,8 @@ struct is_member_object_pointer : std::false_type
 template <typename T, typename U>
 // 1. 部分专用化不能带有默认模板参数, 2. 【特别注意】T 和 T(U::*) 的区别, 一个是普通类型，一个带成员的类型。函数成员时也同理
 struct is_member_object_pointer<
-    T(U::*), typename std::enable_if_t<std::is_member_pointer<T U::*>::value &&
-                                       !is_member_function_pointer<T U::*>::value>> : std::true_type
+    T(U::*), typename std::enable_if_t<std::is_member_pointer<T U::*>::value && !is_member_function_pointer<T U::*>::value>>
+    : std::true_type
 {};
 // 体会下上面 std::enable_if 在模板特化 和 继承上的用法
 
@@ -77,6 +88,12 @@ public:
     int                  a;
     static int           f2() { return 1; }
     static constexpr int a2 = 1;
+
+public:
+    struct StaticTypeDecl
+    {
+        /* data */
+    };
 };
 
 
@@ -112,8 +129,7 @@ int main()
         std::cout << "-----------------test std::add_pointer -------------------" << std::endl;
         std::cout << std::is_same<std::add_pointer_t<int>, int*>::value << std::endl;
         std::cout << std::is_same<std::add_pointer_t<int*>, int*>::value << std::endl;
-        std::cout << std::is_same<std::add_pointer_t<std::remove_pointer_t<int>>, int*>::value
-                  << std::endl;
+        std::cout << std::is_same<std::add_pointer_t<std::remove_pointer_t<int>>, int*>::value << std::endl;
     }
 
     {
@@ -127,6 +143,9 @@ int main()
         std::cout << is_member_object_pointer<decltype(&TestMemFunc::f2)>::value << std::endl;
         std::cout << is_member_object_pointer<decltype(&TestMemFunc::a2)>::value << std::endl;
         std::cout << std::is_member_pointer<decltype(&TestMemFunc::a)>::value << std::endl;
+
+        std::cout << InheritFromObject<TestMemFunc>::value << std::endl;
+        std::cout << InheritFromObject<test_has_member>::value << std::endl;
     }
 
     return 0;

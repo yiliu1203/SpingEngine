@@ -18,9 +18,10 @@ public:
         for (auto item : initial_list) {
             ss << item << " ";
         }
-        ss << "file:" << _file_;
-        ss << "line:" << _line_;
-        ss << "func:" << _func_;
+        ss << "file:" << _file_ << " ";
+        ss << "line:" << _line_ << " ";
+        ss << "func:" << _func_ << " ";
+        ss << std::endl;
         msg_ = ss.str();
     }
 

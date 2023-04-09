@@ -70,6 +70,20 @@
         "xlocmon": "cpp",
         "xloctime": "cpp"
     },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/build": true,
+        "**/xmake": true,
+        "**/*.code-search": true
+    },
+    "files.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/build": true,
+        "**/xmake": true,
+        "**/*.code-search": true
+    },
     "editor.formatOnSave": true,
     "clang-format.executable": "D:\\Program Files\\LLVM\\bin\\clang-format.exe",
     "clang-format.style": "file",

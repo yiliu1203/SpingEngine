@@ -4,7 +4,7 @@ namespace SPing {
 
 std::ostream& operator<<(std::ostream& os, const TypeId& typeId)
 {
-    // os << typeId.hash_code();
+    os << typeId.hash_code();
     return os;
 }
 
