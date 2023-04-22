@@ -77,6 +77,13 @@ target("07_Using")
     add_files("Source/Samples/07_Using/**/*.cpp")
     add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
 
+target("08_Dx12_Initial")
+    set_kind("binary")
+    add_files("Source/Samples/08_Dx12_Initial/*.cpp")
+    add_files("Source/Samples/08_Dx12_Initial/**/*.cpp")
+    add_defines("_XM_NO_INTRINSICS_=1", "NOMINMAX", "m128_f32=vector4_f32", "m128_u32=vector4_u32")
+    add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
+
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
 --

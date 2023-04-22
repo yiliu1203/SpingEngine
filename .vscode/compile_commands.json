@@ -1,8 +1,13 @@
 [
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.02_Object.pdb", "/Od", "/std:c++17", "/ISource\\SPing", "/Ibuild\\config\\02_Object", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\02_Object\\windows\\x86\\debug\\Source\\Samples\\02_Object\\Main.cpp.obj", "Source\\Samples\\02_Object\\Main.cpp"],
-  "file": "Source\\Samples\\02_Object\\Main.cpp"
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.08_Dx12_Initial.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/D_XM_NO_INTRINSICS_=1", "/DNOMINMAX", "/Dm128_f32=vector4_f32", "/Dm128_u32=vector4_u32", "/EHsc", "/Fobuild\\.objs\\08_Dx12_Initial\\windows\\x86\\debug\\Source\\Samples\\08_Dx12_Initial\\DXSample.cpp.obj", "Source\\Samples\\08_Dx12_Initial\\DXSample.cpp"],
+  "file": "Source\\Samples\\08_Dx12_Initial\\DXSample.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.08_Dx12_Initial.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/D_XM_NO_INTRINSICS_=1", "/DNOMINMAX", "/Dm128_f32=vector4_f32", "/Dm128_u32=vector4_u32", "/EHsc", "/Fobuild\\.objs\\08_Dx12_Initial\\windows\\x86\\debug\\Source\\Samples\\08_Dx12_Initial\\Win32Application.cpp.obj", "Source\\Samples\\08_Dx12_Initial\\Win32Application.cpp"],
+  "file": "Source\\Samples\\08_Dx12_Initial\\Win32Application.cpp"
 },
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
@@ -101,8 +106,8 @@
 },
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.03_RTTI.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\03_RTTI\\windows\\x86\\debug\\Source\\Samples\\03_RTTI\\Main.cpp.obj", "Source\\Samples\\03_RTTI\\Main.cpp"],
-  "file": "Source\\Samples\\03_RTTI\\Main.cpp"
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.02_Object.pdb", "/Od", "/std:c++17", "/ISource\\SPing", "/Ibuild\\config\\02_Object", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\02_Object\\windows\\x86\\debug\\Source\\Samples\\02_Object\\Main.cpp.obj", "Source\\Samples\\02_Object\\Main.cpp"],
+  "file": "Source\\Samples\\02_Object\\Main.cpp"
 },
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
@@ -111,13 +116,8 @@
 },
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.04_RTTI_Simple.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\04_RTTI_Simple\\windows\\x86\\debug\\Source\\Samples\\04_RTTI_Simple\\main.cpp.obj", "Source\\Samples\\04_RTTI_Simple\\main.cpp"],
-  "file": "Source\\Samples\\04_RTTI_Simple\\main.cpp"
-},
-{
-  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.04_RTTI_Simple.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\04_RTTI_Simple\\windows\\x86\\debug\\Source\\Samples\\04_RTTI_Simple\\reflect.cpp.obj", "Source\\Samples\\04_RTTI_Simple\\reflect.cpp"],
-  "file": "Source\\Samples\\04_RTTI_Simple\\reflect.cpp"
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.05_Template.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\05_Template\\windows\\x86\\debug\\Source\\Samples\\05_Template\\main.cpp.obj", "Source\\Samples\\05_Template\\main.cpp"],
+  "file": "Source\\Samples\\05_Template\\main.cpp"
 },
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
@@ -131,6 +131,16 @@
 },
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.05_Template.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\05_Template\\windows\\x86\\debug\\Source\\Samples\\05_Template\\main.cpp.obj", "Source\\Samples\\05_Template\\main.cpp"],
-  "file": "Source\\Samples\\05_Template\\main.cpp"
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.03_RTTI.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\03_RTTI\\windows\\x86\\debug\\Source\\Samples\\03_RTTI\\Main.cpp.obj", "Source\\Samples\\03_RTTI\\Main.cpp"],
+  "file": "Source\\Samples\\03_RTTI\\Main.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.04_RTTI_Simple.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\04_RTTI_Simple\\windows\\x86\\debug\\Source\\Samples\\04_RTTI_Simple\\main.cpp.obj", "Source\\Samples\\04_RTTI_Simple\\main.cpp"],
+  "file": "Source\\Samples\\04_RTTI_Simple\\main.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["C:\\Program", "Files\\Microsoft", "Visual", "Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\debug\\compile.04_RTTI_Simple.pdb", "/Od", "/std:c++17", "/DSP_PLATFORM_WIN", "/EHsc", "/Fobuild\\.objs\\04_RTTI_Simple\\windows\\x86\\debug\\Source\\Samples\\04_RTTI_Simple\\reflect.cpp.obj", "Source\\Samples\\04_RTTI_Simple\\reflect.cpp"],
+  "file": "Source\\Samples\\04_RTTI_Simple\\reflect.cpp"
 }]
