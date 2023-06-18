@@ -3,10 +3,10 @@
 
 #include "DXSample.h"
 
-class HelloApplication : public DXSample
+class D3DInitialApp : public DXSample
 {
 public:
-    HelloApplication(int width, int height, const std::string name);
+    D3DInitialApp(int width, int height, const std::string name);
     void OnInit() override;
     void OnDestroy() override;
     void OnKeyDown(UINT8 wparam) override;
@@ -14,4 +14,8 @@ public:
 
     void OnUpdate() override;
     void OnRender() override;
+
+private:
+    static constexpr uint32_t FrameCount = 2;
+    // D3DX12_VIEWPORT           viewport_;
 };

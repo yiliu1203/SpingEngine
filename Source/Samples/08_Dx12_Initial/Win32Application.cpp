@@ -15,6 +15,7 @@ int Win32Application::Run(DXSample* pSample, HINSTANCE hInstance, int nCmdShow)
     windowClass.hInstance     = hInstance;
     windowClass.hCursor       = LoadCursor(NULL, IDC_ARROW);
     windowClass.lpszClassName = "DXSampleClass";
+    windowClass.hbrBackground = (HBRUSH)GetStockObject(NULL_BRUSH);
     RegisterClassEx(&windowClass);
 
     RECT windowRect = {0, 0, static_cast<LONG>(pSample->GetWidth()), static_cast<LONG>(pSample->GetHeight())};

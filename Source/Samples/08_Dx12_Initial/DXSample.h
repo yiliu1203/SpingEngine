@@ -21,8 +21,12 @@ public:
     int         GetWidth() { return width_; }
     int         GetHeight() { return height_; }
 
+protected:
+    void GetHardwareAdapter(IDXGIFactory1* pFactory, IDXGIAdapter1** ppAdapter, bool requestHighPerformanceAdapter = true);
+
 private:
     int         width_;
     int         height_;
     std::string title_;
+    float       aspectRatio_;
 };
