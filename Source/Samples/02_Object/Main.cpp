@@ -122,7 +122,7 @@ int main()
         std::cout << "**************************Test Delegate *********************************" << std::endl;
         TestDeletage testDelegate;
         typedef int (TestDeletage::*CF)(int, int);
-        CF cf = &(TestDeletage::Add);
+        CF cf = &TestDeletage::Add;
         std::cout << "testDelegate.*cf: " << (testDelegate.*cf)(1, 2) << std::endl;
     }
 

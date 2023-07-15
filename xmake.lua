@@ -31,6 +31,9 @@ target("01_HelloWorld")
     add_configfiles("Source/SPing/MacroConfig.h.in")
     add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
 
+
+
+
 target("02_Object")
     set_kind("binary")
     add_deps("SPing")
@@ -44,43 +47,44 @@ target("02_Object")
     add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
 
 
+
 target("03_RTTI")
     set_kind("binary")
     add_files("Source/Samples/03_RTTI/*.cpp")
-    add_files("Source/Samples/03_RTTI/**/*.cpp")
     add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
 
 
 target("04_RTTI_Simple")
     set_kind("binary")
     add_files("Source/Samples/04_RTTI_Simple/*.cpp")
-    add_files("Source/Samples/04_RTTI_Simple/**/*.cpp")
     add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
 
 
 target("05_Template")
     set_kind("binary")
     add_files("Source/Samples/05_Template/*.cpp")
-    add_files("Source/Samples/05_Template/**/*.cpp")
     add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
 
 
 target("06_Exception")
     set_kind("binary")
     add_files("Source/Samples/06_Exception/*.cpp")
-    add_files("Source/Samples/06_Exception/**/*.cpp")
     add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
 
 target("07_Using")
     set_kind("binary")
     add_files("Source/Samples/07_Using/*.cpp")
-    add_files("Source/Samples/07_Using/**/*.cpp")
     add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
 
 target("08_Dx12_Initial")
     set_kind("binary")
     add_files("Source/Samples/08_Dx12_Initial/*.cpp")
-    add_files("Source/Samples/08_Dx12_Initial/**/*.cpp")
+    add_defines("_XM_NO_INTRINSICS_=1", "NOMINMAX", "m128_f32=vector4_f32", "m128_u32=vector4_u32")
+    add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
+
+target("09_MemoryManager")
+    set_kind("binary")
+    add_files("Source/Samples/09_MemoryManager/*.cpp")
     add_defines("_XM_NO_INTRINSICS_=1", "NOMINMAX", "m128_f32=vector4_f32", "m128_u32=vector4_u32")
     add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
 

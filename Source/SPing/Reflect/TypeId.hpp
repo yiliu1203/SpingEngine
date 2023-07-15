@@ -26,13 +26,13 @@ struct StaticTypeDecl
     using type = T;
     static const TypeId id()
     {
-        static_assert(false, "StaticTypeDecl Not Declare");
+        // static_assert(false, "StaticTypeDecl Not Declare");
         return 0;
     };
 
     static constexpr const char* name()
     {
-        static_assert(false, "StaticTypeDecl Not Declare");
+        // static_assert(false, "StaticTypeDecl Not Declare");
         return "";
     }
 };
@@ -49,13 +49,13 @@ struct StaticTypeDecl2
 
     static const TypeId id()
     {
-        static_assert(false, "StaticTypeDecl Not Declare");
+        // static_assert(false, "StaticTypeDecl Not Declare");
         return 0;
     };
 
     static constexpr const char* name()
     {
-        static_assert(false, "StaticTypeDecl Not Declare");
+        // static_assert(false, "StaticTypeDecl Not Declare");
         return "";
     }
 

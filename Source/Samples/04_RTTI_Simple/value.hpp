@@ -107,8 +107,8 @@ public:
         }
         else if constexpr (tRefType == ERefType::LeftRef) {
 
-            assert(ref_type_ != ERefType::NoneRef, "Value::To() Because [target is Ref, And Self is Copy, HasError]");
-            assert(!(is_const_ && !tIsConst), "Value::To(): Because const to NoneConst");
+            assert(ref_type_ != ERefType::NoneRef);
+            assert(!(is_const_ && !tIsConst));
             
             if (is_const_) {
                 return *std::any_cast<const RawT*>(storage_);
@@ -118,7 +118,7 @@ public:
             }
         }
         else if constexpr (tRefType == ERefType::RightRef) {
-            assert(ref_type_ != ERefType::NoneRef, "Value::To() Because [target is Ref, And Self is Copy, HasError]");
+            assert(ref_type_ != ERefType::NoneRef);
             if (ref_type_ == ERefType::LeftRef) {
                 if (is_const_)
                     return std::move(*std::any_cast<const RawT*>(storage_));
@@ -186,7 +186,7 @@ public:
 
     template<typename... Args>
         void Invoke(Args&&... args) {
-            assert(n_args_ == sizeof...(Args), "Args Size Error");
+            assert(n_args_ == sizeof...(Args));
             // 实参参数包 -> 类型为Value的array
             std::array<Value, sizeof...(Args)> arr = {Value{std::forward<Args>(args)...}};
             func_(&arr);
