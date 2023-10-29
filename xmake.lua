@@ -1,8 +1,8 @@
 add_rules("mode.debug", "mode.release")
 add_defines("SP_PLATFORM_WIN")
 set_optimize("none")
-set_languages("clatest", "cxx17")
-add_cxflags("/EHsc")
+set_languages("clatest", "cxx20")
+-- add_cxflags("/EHsc")
 -- add_defines( "UNICODE", "_UNICODE")
 -- add_cxflags("/utf-8")
 -- add_cxflags("/source-charset:utf-8")
@@ -65,6 +65,22 @@ target("05_Template")
     add_files("Source/Samples/05_Template/*.cpp")
     add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
 
+target("05_Template_1")
+    set_kind("binary")
+    add_files("Source/Samples/05_Template_1/*.cpp")
+    add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
+
+
+target("05_Template_2")
+    set_kind("binary")
+    add_files("Source/Samples/05_Template_2/main.cpp")
+    add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
+
+target("05_Template_3")
+    set_kind("binary")
+    add_files("Source/Samples/05_Template_3/main.cpp")
+    add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
+
 
 target("06_Exception")
     set_kind("binary")
@@ -87,6 +103,32 @@ target("09_MemoryManager")
     add_files("Source/Samples/09_MemoryManager/*.cpp")
     add_defines("_XM_NO_INTRINSICS_=1", "NOMINMAX", "m128_f32=vector4_f32", "m128_u32=vector4_u32")
     add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
+
+target("10_RTTI_MACRO")
+    set_kind("binary")
+    add_files("Source/Samples/10_RTTI_MACRO/*.cpp")
+    add_defines("_XM_NO_INTRINSICS_=1", "NOMINMAX", "m128_f32=vector4_f32", "m128_u32=vector4_u32")
+    add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
+
+target("11_Concurrency")
+    set_kind("binary")
+    add_files("Source/Samples/11_Concurrency/*.cpp")
+    add_defines("_XM_NO_INTRINSICS_=1", "NOMINMAX", "m128_f32=vector4_f32", "m128_u32=vector4_u32")
+    add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
+
+target("12_ThreadPool")
+    set_kind("binary")
+    add_files("Source/Samples/12_ThreadPool/*.cpp")
+    add_defines("_XM_NO_INTRINSICS_=1", "NOMINMAX", "m128_f32=vector4_f32", "m128_u32=vector4_u32")
+    add_syslinks("User32", "kernel32", "Gdi32", "Shell32")
+    set_runtimes("MD")
+
+target("13_SIMD")
+    set_kind("binary")
+    add_files("Source/Samples/13_SIMD/*.cpp")
+    add_defines("_XM_NO_INTRINSICS_=1", "NOMINMAX", "m128_f32=vector4_f32", "m128_u32=vector4_u32")
+    add_syslinks("User32", "kernel32", "Gdi32", "Shell32")
+    set_runtimes("MD")
 
 --
 -- If you want to known more usage about xmake, please see https://xmake.io

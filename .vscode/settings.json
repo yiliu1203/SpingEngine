@@ -68,7 +68,16 @@
         "xlocbuf": "cpp",
         "xlocmes": "cpp",
         "xlocmon": "cpp",
-        "xloctime": "cpp"
+        "xloctime": "cpp",
+        "queue": "cpp",
+        "deque": "cpp",
+        "forward_list": "cpp",
+        "chrono": "cpp",
+        "condition_variable": "cpp",
+        "future": "cpp",
+        "iomanip": "cpp",
+        "ranges": "cpp",
+        "span": "cpp"
     },
     "search.exclude": {
         "**/node_modules": true,
