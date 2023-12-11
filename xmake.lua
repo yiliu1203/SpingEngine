@@ -59,6 +59,11 @@ target("004_RTTI_Simple")
     add_files("Source/Samples/004_RTTI_Simple/*.cpp")
     add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
 
+target("004_RTTI_Clang")
+    set_kind("binary")
+    add_files("Source/Samples/004_RTTI_Clang/*.cpp")
+    add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
+
 
 target("005_Template")
     set_kind("binary")
@@ -104,9 +109,9 @@ target("009_MemoryManager")
     add_defines("_XM_NO_INTRINSICS_=1", "NOMINMAX", "m128_f32=vector4_f32", "m128_u32=vector4_u32")
     add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
 
-target("010_RTTI_MACRO")
+target("004_RTTI_MACRO")
     set_kind("binary")
-    add_files("Source/Samples/010_RTTI_MACRO/*.cpp")
+    add_files("Source/Samples/004_RTTI_MACRO/*.cpp")
     add_defines("_XM_NO_INTRINSICS_=1", "NOMINMAX", "m128_f32=vector4_f32", "m128_u32=vector4_u32")
     add_syslinks("User32", "kernel32", "Gdi32", "Shell32", "DXGI", "D3D12", "D3DCompiler")
 

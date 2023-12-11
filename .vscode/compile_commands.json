@@ -1,21 +1,6 @@
 [
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-fms-runtime-lib=dll", "-DSP_PLATFORM_WIN", "-D_XM_NO_INTRINSICS_=1", "-DNOMINMAX", "-Dm128_f32=vector4_f32", "-Dm128_u32=vector4_u32", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\013_SIMD\\windows\\x64\\debug\\Source\\Samples\\013_SIMD\\main.cpp.obj", "Source\\Samples\\013_SIMD\\main.cpp"],
-  "file": "Source\\Samples\\013_SIMD\\main.cpp"
-},
-{
-  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\004_RTTI_Simple\\windows\\x64\\debug\\Source\\Samples\\004_RTTI_Simple\\main.cpp.obj", "Source\\Samples\\004_RTTI_Simple\\main.cpp"],
-  "file": "Source\\Samples\\004_RTTI_Simple\\main.cpp"
-},
-{
-  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\004_RTTI_Simple\\windows\\x64\\debug\\Source\\Samples\\004_RTTI_Simple\\reflect.cpp.obj", "Source\\Samples\\004_RTTI_Simple\\reflect.cpp"],
-  "file": "Source\\Samples\\004_RTTI_Simple\\reflect.cpp"
-},
-{
-  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
   "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-ISource\\SPing", "-Ibuild\\config\\SPing", "-DSP_PLATFORM_WIN", "-DSP_BUILD_DLL", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\SPing\\windows\\x64\\debug\\Source\\SPing\\Core\\Context.cpp.obj", "Source\\SPing\\Core\\Context.cpp"],
   "file": "Source\\SPing\\Core\\Context.cpp"
 },
@@ -111,31 +96,6 @@
 },
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\005_Template_1\\windows\\x64\\debug\\Source\\Samples\\005_Template_1\\main.cpp.obj", "Source\\Samples\\005_Template_1\\main.cpp"],
-  "file": "Source\\Samples\\005_Template_1\\main.cpp"
-},
-{
-  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-D_XM_NO_INTRINSICS_=1", "-DNOMINMAX", "-Dm128_f32=vector4_f32", "-Dm128_u32=vector4_u32", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\009_MemoryManager\\windows\\x64\\debug\\Source\\Samples\\009_MemoryManager\\main.cpp.obj", "Source\\Samples\\009_MemoryManager\\main.cpp"],
-  "file": "Source\\Samples\\009_MemoryManager\\main.cpp"
-},
-{
-  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-fms-runtime-lib=dll", "-DSP_PLATFORM_WIN", "-D_XM_NO_INTRINSICS_=1", "-DNOMINMAX", "-Dm128_f32=vector4_f32", "-Dm128_u32=vector4_u32", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\012_ThreadPool\\windows\\x64\\debug\\Source\\Samples\\012_ThreadPool\\main.cpp.obj", "Source\\Samples\\012_ThreadPool\\main.cpp"],
-  "file": "Source\\Samples\\012_ThreadPool\\main.cpp"
-},
-{
-  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\007_Using\\windows\\x64\\debug\\Source\\Samples\\007_Using\\main.cpp.obj", "Source\\Samples\\007_Using\\main.cpp"],
-  "file": "Source\\Samples\\007_Using\\main.cpp"
-},
-{
-  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-ISource\\SPing", "-Ibuild\\config\\001_HelloWorld", "-DSP_PLATFORM_WIN", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\001_HelloWorld\\windows\\x64\\debug\\Source\\Samples\\001_HelloWorld\\HelloWorld.cpp.obj", "Source\\Samples\\001_HelloWorld\\HelloWorld.cpp"],
-  "file": "Source\\Samples\\001_HelloWorld\\HelloWorld.cpp"
-},
-{
-  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
   "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-D_XM_NO_INTRINSICS_=1", "-DNOMINMAX", "-Dm128_f32=vector4_f32", "-Dm128_u32=vector4_u32", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\008_Dx12_Initial\\windows\\x64\\debug\\Source\\Samples\\008_Dx12_Initial\\D3DInitialApp.cpp.obj", "Source\\Samples\\008_Dx12_Initial\\D3DInitialApp.cpp"],
   "file": "Source\\Samples\\008_Dx12_Initial\\D3DInitialApp.cpp"
 },
@@ -156,23 +116,23 @@
 },
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\005_Template_2\\windows\\x64\\debug\\Source\\Samples\\005_Template_2\\main.cpp.obj", "Source\\Samples\\005_Template_2\\main.cpp"],
-  "file": "Source\\Samples\\005_Template_2\\main.cpp"
-},
-{
-  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-D_XM_NO_INTRINSICS_=1", "-DNOMINMAX", "-Dm128_f32=vector4_f32", "-Dm128_u32=vector4_u32", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\011_Concurrency\\windows\\x64\\debug\\Source\\Samples\\011_Concurrency\\main.cpp.obj", "Source\\Samples\\011_Concurrency\\main.cpp"],
-  "file": "Source\\Samples\\011_Concurrency\\main.cpp"
-},
-{
-  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
   "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\003_RTTI\\windows\\x64\\debug\\Source\\Samples\\003_RTTI\\Main.cpp.obj", "Source\\Samples\\003_RTTI\\Main.cpp"],
   "file": "Source\\Samples\\003_RTTI\\Main.cpp"
 },
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\005_Template_3\\windows\\x64\\debug\\Source\\Samples\\005_Template_3\\main.cpp.obj", "Source\\Samples\\005_Template_3\\main.cpp"],
-  "file": "Source\\Samples\\005_Template_3\\main.cpp"
+  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\007_Using\\windows\\x64\\debug\\Source\\Samples\\007_Using\\main.cpp.obj", "Source\\Samples\\007_Using\\main.cpp"],
+  "file": "Source\\Samples\\007_Using\\main.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-D_XM_NO_INTRINSICS_=1", "-DNOMINMAX", "-Dm128_f32=vector4_f32", "-Dm128_u32=vector4_u32", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\004_RTTI_MACRO\\windows\\x64\\debug\\Source\\Samples\\004_RTTI_MACRO\\main.cpp.obj", "Source\\Samples\\004_RTTI_MACRO\\main.cpp"],
+  "file": "Source\\Samples\\004_RTTI_MACRO\\main.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-D_XM_NO_INTRINSICS_=1", "-DNOMINMAX", "-Dm128_f32=vector4_f32", "-Dm128_u32=vector4_u32", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\004_RTTI_MACRO\\windows\\x64\\debug\\Source\\Samples\\004_RTTI_MACRO\\reflect.cpp.obj", "Source\\Samples\\004_RTTI_MACRO\\reflect.cpp"],
+  "file": "Source\\Samples\\004_RTTI_MACRO\\reflect.cpp"
 },
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
@@ -181,21 +141,66 @@
 },
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\006_Exception\\windows\\x64\\debug\\Source\\Samples\\006_Exception\\main.cpp.obj", "Source\\Samples\\006_Exception\\main.cpp"],
-  "file": "Source\\Samples\\006_Exception\\main.cpp"
+  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-D_XM_NO_INTRINSICS_=1", "-DNOMINMAX", "-Dm128_f32=vector4_f32", "-Dm128_u32=vector4_u32", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\009_MemoryManager\\windows\\x64\\debug\\Source\\Samples\\009_MemoryManager\\main.cpp.obj", "Source\\Samples\\009_MemoryManager\\main.cpp"],
+  "file": "Source\\Samples\\009_MemoryManager\\main.cpp"
 },
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-D_XM_NO_INTRINSICS_=1", "-DNOMINMAX", "-Dm128_f32=vector4_f32", "-Dm128_u32=vector4_u32", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\010_RTTI_MACRO\\windows\\x64\\debug\\Source\\Samples\\010_RTTI_MACRO\\main.cpp.obj", "Source\\Samples\\010_RTTI_MACRO\\main.cpp"],
-  "file": "Source\\Samples\\010_RTTI_MACRO\\main.cpp"
+  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-fms-runtime-lib=dll", "-DSP_PLATFORM_WIN", "-D_XM_NO_INTRINSICS_=1", "-DNOMINMAX", "-Dm128_f32=vector4_f32", "-Dm128_u32=vector4_u32", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\013_SIMD\\windows\\x64\\debug\\Source\\Samples\\013_SIMD\\main.cpp.obj", "Source\\Samples\\013_SIMD\\main.cpp"],
+  "file": "Source\\Samples\\013_SIMD\\main.cpp"
 },
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
-  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-D_XM_NO_INTRINSICS_=1", "-DNOMINMAX", "-Dm128_f32=vector4_f32", "-Dm128_u32=vector4_u32", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\010_RTTI_MACRO\\windows\\x64\\debug\\Source\\Samples\\010_RTTI_MACRO\\reflect.cpp.obj", "Source\\Samples\\010_RTTI_MACRO\\reflect.cpp"],
-  "file": "Source\\Samples\\010_RTTI_MACRO\\reflect.cpp"
+  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-ISource\\SPing", "-Ibuild\\config\\001_HelloWorld", "-DSP_PLATFORM_WIN", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\001_HelloWorld\\windows\\x64\\debug\\Source\\Samples\\001_HelloWorld\\HelloWorld.cpp.obj", "Source\\Samples\\001_HelloWorld\\HelloWorld.cpp"],
+  "file": "Source\\Samples\\001_HelloWorld\\HelloWorld.cpp"
 },
 {
   "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
   "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-ISource\\SPing", "-Ibuild\\config\\002_Object", "-DSP_PLATFORM_WIN", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\002_Object\\windows\\x64\\debug\\Source\\Samples\\002_Object\\Main.cpp.obj", "Source\\Samples\\002_Object\\Main.cpp"],
   "file": "Source\\Samples\\002_Object\\Main.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\005_Template_2\\windows\\x64\\debug\\Source\\Samples\\005_Template_2\\main.cpp.obj", "Source\\Samples\\005_Template_2\\main.cpp"],
+  "file": "Source\\Samples\\005_Template_2\\main.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\005_Template_1\\windows\\x64\\debug\\Source\\Samples\\005_Template_1\\main.cpp.obj", "Source\\Samples\\005_Template_1\\main.cpp"],
+  "file": "Source\\Samples\\005_Template_1\\main.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\006_Exception\\windows\\x64\\debug\\Source\\Samples\\006_Exception\\main.cpp.obj", "Source\\Samples\\006_Exception\\main.cpp"],
+  "file": "Source\\Samples\\006_Exception\\main.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\004_RTTI_Simple\\windows\\x64\\debug\\Source\\Samples\\004_RTTI_Simple\\main.cpp.obj", "Source\\Samples\\004_RTTI_Simple\\main.cpp"],
+  "file": "Source\\Samples\\004_RTTI_Simple\\main.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\004_RTTI_Simple\\windows\\x64\\debug\\Source\\Samples\\004_RTTI_Simple\\reflect.cpp.obj", "Source\\Samples\\004_RTTI_Simple\\reflect.cpp"],
+  "file": "Source\\Samples\\004_RTTI_Simple\\reflect.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\004_RTTI_Clang\\windows\\x64\\debug\\Source\\Samples\\004_RTTI_Clang\\MemberVariable.cpp.obj", "Source\\Samples\\004_RTTI_Clang\\MemberVariable.cpp"],
+  "file": "Source\\Samples\\004_RTTI_Clang\\MemberVariable.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-fms-runtime-lib=dll", "-DSP_PLATFORM_WIN", "-D_XM_NO_INTRINSICS_=1", "-DNOMINMAX", "-Dm128_f32=vector4_f32", "-Dm128_u32=vector4_u32", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\012_ThreadPool\\windows\\x64\\debug\\Source\\Samples\\012_ThreadPool\\main.cpp.obj", "Source\\Samples\\012_ThreadPool\\main.cpp"],
+  "file": "Source\\Samples\\012_ThreadPool\\main.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\005_Template_3\\windows\\x64\\debug\\Source\\Samples\\005_Template_3\\main.cpp.obj", "Source\\Samples\\005_Template_3\\main.cpp"],
+  "file": "Source\\Samples\\005_Template_3\\main.cpp"
+},
+{
+  "directory": "d:\\myWorkVirtualZ\\SPingEngine\\SPingEngine1_1\\SPingEngine1_1",
+  "arguments": ["clang.exe", "-c", "-Qunused-arguments", "-m64", "-g", "-O0", "-std=c++20", "-DSP_PLATFORM_WIN", "-D_XM_NO_INTRINSICS_=1", "-DNOMINMAX", "-Dm128_f32=vector4_f32", "-Dm128_u32=vector4_u32", "-fexceptions", "-fcxx-exceptions", "-o", "build\\.objs\\011_Concurrency\\windows\\x64\\debug\\Source\\Samples\\011_Concurrency\\main.cpp.obj", "Source\\Samples\\011_Concurrency\\main.cpp"],
+  "file": "Source\\Samples\\011_Concurrency\\main.cpp"
 }]
